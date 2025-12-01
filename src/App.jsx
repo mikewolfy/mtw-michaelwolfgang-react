@@ -11,6 +11,8 @@ import Resources from './pages/Developer/Resources';
 import Reed from './pages/Family/Reed';
 import Emma from './pages/Family/Emma';
 import MomDad from './pages/Family/MomDad';
+import MyersBriggs from './pages/MyersBriggs';
+import LoveLanguages from './pages/LoveLanguages';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="links" element={<Links />} />
+          <Route path="myers-briggs" element={<MyersBriggs />} />
+          <Route path="love-languages" element={<LoveLanguages />} />
           
           {/* Developer Routes */}
           <Route path="developer" element={<Developer />} />
