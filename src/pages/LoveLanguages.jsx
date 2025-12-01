@@ -192,6 +192,91 @@ const LoveLanguages = () => {
           </p>
         </div>
 
+        <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+          <h3 className="text-3xl font-bold text-gray-800 mb-6 text-center">
+            <span className="bg-gradient-to-r from-rose-600 to-purple-600 bg-clip-text text-transparent">
+              Ways to Communicate with Each Love Language
+            </span>
+          </h3>
+
+          <div className="space-y-6">
+            <div className="border-l-4 border-blue-500 pl-6 py-2">
+              <h4 className="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
+                <span className="text-2xl">💬</span> Words of Affirmation
+              </h4>
+              <ul className="space-y-2 text-gray-700">
+                <li>• Say "I love you" and "I appreciate you" often</li>
+                <li>• Give genuine compliments about their appearance, achievements, or character</li>
+                <li>• Write love notes, texts, or cards expressing your feelings</li>
+                <li>• Offer encouragement during challenging times</li>
+                <li>• Verbally acknowledge their efforts and contributions</li>
+                <li>• Express gratitude for the things they do</li>
+                <li>• Praise them in front of others</li>
+              </ul>
+            </div>
+
+            <div className="border-l-4 border-green-500 pl-6 py-2">
+              <h4 className="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
+                <span className="text-2xl">⏰</span> Quality Time
+              </h4>
+              <ul className="space-y-2 text-gray-700">
+                <li>• Put away your phone and give undivided attention</li>
+                <li>• Plan regular date nights or special outings together</li>
+                <li>• Have meaningful conversations without distractions</li>
+                <li>• Take walks together and talk about your day</li>
+                <li>• Cook or eat meals together without TV or devices</li>
+                <li>• Do activities you both enjoy (games, hobbies, sports)</li>
+                <li>• Travel together and create shared experiences</li>
+              </ul>
+            </div>
+
+            <div className="border-l-4 border-purple-500 pl-6 py-2">
+              <h4 className="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
+                <span className="text-2xl">🎁</span> Receiving Gifts
+              </h4>
+              <ul className="space-y-2 text-gray-700">
+                <li>• Give thoughtful gifts that show you were thinking of them</li>
+                <li>• Remember special occasions (birthdays, anniversaries, holidays)</li>
+                <li>• Bring back souvenirs when you travel</li>
+                <li>• Surprise them with their favorite treat or item</li>
+                <li>• Create handmade gifts or personalized items</li>
+                <li>• Give flowers, chocolates, or small tokens "just because"</li>
+                <li>• Pay attention to things they mention wanting</li>
+              </ul>
+            </div>
+
+            <div className="border-l-4 border-orange-500 pl-6 py-2">
+              <h4 className="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
+                <span className="text-2xl">🤝</span> Acts of Service
+              </h4>
+              <ul className="space-y-2 text-gray-700">
+                <li>• Help with household chores (dishes, laundry, cleaning)</li>
+                <li>• Cook their favorite meal or pack their lunch</li>
+                <li>• Run errands for them when they're busy</li>
+                <li>• Fill up their gas tank or wash their car</li>
+                <li>• Fix things around the house without being asked</li>
+                <li>• Help with projects or tasks they're working on</li>
+                <li>• Take care of responsibilities to lighten their load</li>
+              </ul>
+            </div>
+
+            <div className="border-l-4 border-rose-500 pl-6 py-2">
+              <h4 className="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
+                <span className="text-2xl">🤗</span> Physical Touch
+              </h4>
+              <ul className="space-y-2 text-gray-700">
+                <li>• Hold hands while walking or sitting together</li>
+                <li>• Give hugs, kisses, and physical affection regularly</li>
+                <li>• Offer back rubs, massages, or gentle touches</li>
+                <li>• Sit close together on the couch while relaxing</li>
+                <li>• Put your arm around them or hold them close</li>
+                <li>• Greet them with a warm embrace when reuniting</li>
+                <li>• Show physical comfort during difficult moments</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         <div className="text-center">
           <button
             onClick={resetTest}

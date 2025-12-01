@@ -195,6 +195,116 @@ const MyersBriggs = () => {
             <li><strong>Judging (J) vs. Perceiving (P):</strong> How you structure your life</li>
           </ul>
         </div>
+
+        <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+          <h3 className="text-3xl font-bold text-gray-800 mb-6 text-center">
+            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+              Understanding All 16 Personality Types
+            </span>
+          </h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Analysts */}
+            <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 border-2 border-purple-200">
+              <h4 className="text-xl font-bold text-purple-700 mb-3">INTJ - The Architect</h4>
+              <p className="text-gray-700 text-sm mb-2">Strategic, logical, and independent thinkers who see the world as a chessboard.</p>
+              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Approach challenges with strategic planning and long-term vision. <strong>With people:</strong> Value competence and intellectual depth, preferring meaningful conversations over small talk.</p>
+            </div>
+
+            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 border-2 border-blue-200">
+              <h4 className="text-xl font-bold text-blue-700 mb-3">INTP - The Logician</h4>
+              <p className="text-gray-700 text-sm mb-2">Innovative inventors and philosophers who love exploring theoretical concepts.</p>
+              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Question everything and seek to understand underlying principles. <strong>With people:</strong> Share ideas enthusiastically but may struggle with emotional expression.</p>
+            </div>
+
+            <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-xl p-6 border-2 border-indigo-200">
+              <h4 className="text-xl font-bold text-indigo-700 mb-3">ENTJ - The Commander</h4>
+              <p className="text-gray-700 text-sm mb-2">Bold leaders who excel at organizing people and resources toward goals.</p>
+              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Take charge and drive toward efficiency and results. <strong>With people:</strong> Direct and confident, valuing competence and expecting high performance.</p>
+            </div>
+
+            <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl p-6 border-2 border-cyan-200">
+              <h4 className="text-xl font-bold text-cyan-700 mb-3">ENTP - The Debater</h4>
+              <p className="text-gray-700 text-sm mb-2">Quick-witted innovators who love intellectual challenges and debates.</p>
+              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Challenge conventions and explore multiple possibilities. <strong>With people:</strong> Engaging and charismatic, enjoying spirited discussions and mental sparring.</p>
+            </div>
+
+            {/* Diplomats */}
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border-2 border-green-200">
+              <h4 className="text-xl font-bold text-green-700 mb-3">INFJ - The Advocate</h4>
+              <p className="text-gray-700 text-sm mb-2">Idealistic visionaries dedicated to helping others and making the world better.</p>
+              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Pursue meaningful causes with determination and insight. <strong>With people:</strong> Deeply empathetic and understanding, forming authentic connections.</p>
+            </div>
+
+            <div className="bg-gradient-to-br from-teal-50 to-green-50 rounded-xl p-6 border-2 border-teal-200">
+              <h4 className="text-xl font-bold text-teal-700 mb-3">INFP - The Mediator</h4>
+              <p className="text-gray-700 text-sm mb-2">Compassionate idealists guided by their values and creativity.</p>
+              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Seek authenticity and align actions with core values. <strong>With people:</strong> Gentle and accepting, offering deep understanding and support.</p>
+            </div>
+
+            <div className="bg-gradient-to-br from-emerald-50 to-green-50 rounded-xl p-6 border-2 border-emerald-200">
+              <h4 className="text-xl font-bold text-emerald-700 mb-3">ENFJ - The Protagonist</h4>
+              <p className="text-gray-700 text-sm mb-2">Charismatic leaders who inspire and motivate others to reach their potential.</p>
+              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Lead with vision and bring people together for common goals. <strong>With people:</strong> Warm and encouraging, naturally attuned to others' emotions and needs.</p>
+            </div>
+
+            <div className="bg-gradient-to-br from-lime-50 to-green-50 rounded-xl p-6 border-2 border-lime-200">
+              <h4 className="text-xl font-bold text-lime-700 mb-3">ENFP - The Campaigner</h4>
+              <p className="text-gray-700 text-sm mb-2">Enthusiastic free spirits who see life as full of possibilities.</p>
+              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Explore ideas with creativity and spontaneity. <strong>With people:</strong> Energetic and optimistic, easily connecting and inspiring others.</p>
+            </div>
+
+            {/* Sentinels */}
+            <div className="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-xl p-6 border-2 border-amber-200">
+              <h4 className="text-xl font-bold text-amber-700 mb-3">ISTJ - The Logistician</h4>
+              <p className="text-gray-700 text-sm mb-2">Practical and responsible individuals who value order and reliability.</p>
+              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Follow established procedures and honor commitments. <strong>With people:</strong> Dependable and honest, preferring clear expectations and traditions.</p>
+            </div>
+
+            <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl p-6 border-2 border-orange-200">
+              <h4 className="text-xl font-bold text-orange-700 mb-3">ISFJ - The Defender</h4>
+              <p className="text-gray-700 text-sm mb-2">Dedicated protectors who care deeply about others' wellbeing.</p>
+              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Work diligently behind the scenes to maintain stability. <strong>With people:</strong> Warm and considerate, remembering details and providing practical help.</p>
+            </div>
+
+            <div className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-xl p-6 border-2 border-yellow-200">
+              <h4 className="text-xl font-bold text-yellow-700 mb-3">ESTJ - The Executive</h4>
+              <p className="text-gray-700 text-sm mb-2">Organized administrators who excel at managing tasks and people.</p>
+              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Create order through systems and clear rules. <strong>With people:</strong> Direct and decisive, expecting accountability and results.</p>
+            </div>
+
+            <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl p-6 border-2 border-red-200">
+              <h4 className="text-xl font-bold text-red-700 mb-3">ESFJ - The Consul</h4>
+              <p className="text-gray-700 text-sm mb-2">Caring helpers who thrive on bringing people together and fostering harmony.</p>
+              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Build community through cooperation and tradition. <strong>With people:</strong> Sociable and attentive, going out of their way to help others feel included.</p>
+            </div>
+
+            {/* Explorers */}
+            <div className="bg-gradient-to-br from-slate-50 to-gray-50 rounded-xl p-6 border-2 border-slate-200">
+              <h4 className="text-xl font-bold text-slate-700 mb-3">ISTP - The Virtuoso</h4>
+              <p className="text-gray-700 text-sm mb-2">Bold experimenters who excel at understanding how things work.</p>
+              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Approach challenges hands-on with practical problem-solving. <strong>With people:</strong> Reserved but friendly, sharing expertise when needed.</p>
+            </div>
+
+            <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl p-6 border-2 border-pink-200">
+              <h4 className="text-xl font-bold text-pink-700 mb-3">ISFP - The Adventurer</h4>
+              <p className="text-gray-700 text-sm mb-2">Flexible artists who live in the moment and express themselves creatively.</p>
+              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Seek beauty and new experiences with openness. <strong>With people:</strong> Gentle and sensitive, preferring harmony and personal expression.</p>
+            </div>
+
+            <div className="bg-gradient-to-br from-gray-50 to-slate-50 rounded-xl p-6 border-2 border-gray-300">
+              <h4 className="text-xl font-bold text-gray-700 mb-3">ESTP - The Entrepreneur</h4>
+              <p className="text-gray-700 text-sm mb-2">Energetic risk-takers who thrive in dynamic, action-oriented environments.</p>
+              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Dive into action and adapt quickly to changing situations. <strong>With people:</strong> Bold and direct, enjoying excitement and social engagement.</p>
+            </div>
+
+            <div className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-xl p-6 border-2 border-rose-200">
+              <h4 className="text-xl font-bold text-rose-700 mb-3">ESFP - The Entertainer</h4>
+              <p className="text-gray-700 text-sm mb-2">Spontaneous performers who bring joy and excitement wherever they go.</p>
+              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Embrace life's pleasures with enthusiasm and spontaneity. <strong>With people:</strong> Outgoing and fun-loving, naturally drawing others into the moment.</p>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
