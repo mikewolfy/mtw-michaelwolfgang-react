@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const LoveLanguages = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -10,6 +10,30 @@ const LoveLanguages = () => {
     physicalTouch: 0
   });
   const [showResults, setShowResults] = useState(false);
+  const [previousResults, setPreviousResults] = useState(null);
+  const [showPreviousOption, setShowPreviousOption] = useState(false);
+
+  // Check for previous results on component mount
+  useEffect(() => {
+    const savedResults = localStorage.getItem('loveLanguagesResults');
+    if (savedResults) {
+      const parsed = JSON.parse(savedResults);
+      setPreviousResults(parsed);
+      setShowPreviousOption(true);
+    }
+  }, []);
+
+  // Save results to localStorage when showing results
+  useEffect(() => {
+    if (showResults) {
+      const resultsData = {
+        scores,
+        rankedLanguages: getRankedLanguages(),
+        dateTaken: new Date().toISOString()
+      };
+      localStorage.setItem('loveLanguagesResults', JSON.stringify(resultsData));
+    }
+  }, [showResults]);
 
   const questions = [
     // Questions 1-6
@@ -118,7 +142,77 @@ const LoveLanguages = () => {
       physicalTouch: 0
     });
     setShowResults(false);
+    setShowPreviousOption(false);
   };
+
+  const loadPreviousResults = () => {
+    if (previousResults) {
+      setScores(previousResults.scores);
+      setShowResults(true);
+      setShowPreviousOption(false);
+    }
+  };
+
+  const startNewTest = () => {
+    setShowPreviousOption(false);
+  };
+
+  // Show previous results option screen
+  if (showPreviousOption && previousResults) {
+    const dateTaken = new Date(previousResults.dateTaken);
+    const formattedDate = dateTaken.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+
+    const topLanguage = previousResults.rankedLanguages[0];
+
+    return (
+      <div className="max-w-4xl mx-auto space-y-8">
+        <div className="text-center mb-8">
+          <h1 className="text-5xl font-extrabold bg-gradient-to-r from-rose-600 via-pink-600 to-purple-600 bg-clip-text text-transparent mb-4">
+            The 5 Love Languages Test
+          </h1>
+          <p className="text-gray-600 text-lg">Welcome back!</p>
+        </div>
+
+        <div className="bg-white rounded-2xl shadow-2xl p-10 border border-gray-100">
+          <div className="text-center mb-8">
+            <div className="inline-block bg-gradient-to-r from-rose-500 to-purple-500 text-white px-6 py-3 rounded-xl text-xl font-bold mb-4">
+              Previous Result Found
+            </div>
+            <h2 className="text-2xl font-bold text-gray-800 mb-2">
+              You took this test on {formattedDate}
+            </h2>
+            <p className="text-xl text-gray-600">
+              Your top love language was: <span className="font-bold text-rose-600">{topLanguage.name}</span>
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <button
+              onClick={loadPreviousResults}
+              className="group bg-gradient-to-br from-rose-50 to-rose-100 hover:from-rose-100 hover:to-rose-200 p-8 rounded-2xl border-2 border-rose-200 hover:border-rose-400 transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+            >
+              <div className="text-4xl mb-4">📊</div>
+              <h3 className="text-xl font-bold text-gray-800 mb-2">View Previous Results</h3>
+              <p className="text-gray-600">See your full love language rankings from {formattedDate}</p>
+            </button>
+
+            <button
+              onClick={startNewTest}
+              className="group bg-gradient-to-br from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 p-8 rounded-2xl border-2 border-purple-200 hover:border-purple-400 transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+            >
+              <div className="text-4xl mb-4">🔄</div>
+              <h3 className="text-xl font-bold text-gray-800 mb-2">Take Test Again</h3>
+              <p className="text-gray-600">Start a new test and update your results</p>
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   const currentQ = questions[currentQuestion];
   const progress = ((currentQuestion + 1) / questions.length) * 100;
