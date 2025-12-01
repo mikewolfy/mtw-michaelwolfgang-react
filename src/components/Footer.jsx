@@ -5,7 +5,7 @@ const Footer = () => {
         <div className="text-center">
           <p>&copy; {new Date().getFullYear()} Michael Wolfgang. All rights reserved.</p>
           <p className="mt-2 text-sm text-gray-400">
-            Software Engineer | Runner | Investor | Lifelong Learner
+            Software Architect | Husband & Dad | Runner | Investor | Lifelong Learner
           </p>
         </div>
       </div>
