@@ -12,6 +12,8 @@ const Header = () => {
             <li><Link to="/" className="hover:text-yellow-300 transition-colors duration-200 border-b-2 border-transparent hover:border-yellow-300 pb-1">Home</Link></li>
             <li><Link to="/developer" className="hover:text-yellow-300 transition-colors duration-200 border-b-2 border-transparent hover:border-yellow-300 pb-1">Developer</Link></li>
             <li><Link to="/about" className="hover:text-yellow-300 transition-colors duration-200 border-b-2 border-transparent hover:border-yellow-300 pb-1">About</Link></li>
+            <li><Link to="/myers-briggs" className="hover:text-yellow-300 transition-colors duration-200 border-b-2 border-transparent hover:border-yellow-300 pb-1">Personality</Link></li>
+            <li><Link to="/love-languages" className="hover:text-yellow-300 transition-colors duration-200 border-b-2 border-transparent hover:border-yellow-300 pb-1">Love Languages</Link></li>
             <li><Link to="/contact" className="hover:text-yellow-300 transition-colors duration-200 border-b-2 border-transparent hover:border-yellow-300 pb-1">Contact</Link></li>
             <li><Link to="/links" className="hover:text-yellow-300 transition-colors duration-200 border-b-2 border-transparent hover:border-yellow-300 pb-1">Links</Link></li>
           </ul>
