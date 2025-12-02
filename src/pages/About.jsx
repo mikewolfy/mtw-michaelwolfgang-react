@@ -15,12 +15,12 @@ const About = () => {
             to deliver value to customers and clients.
           </p>
           <p>
-            Beyond my professional work, I'm an avid runner with over 20 marathons completed, including 
-            the Boston Marathon. I'm also passionate about personal finance and investing, helping others 
-            understand the fundamentals of building wealth.
+            Beyond my professional work, I'm a husband and father, a Tae Kwon Do black belt,
+            an avid runner with over 20 marathons completed, including 
+            the Boston Marathon. I'm also enjoy learning about personal finance and investing.
           </p>
           <p>
-            I believe in continuous learning and improvement. I regularly listen to podcasts, read books, 
+            I regularly listen to podcasts, read books, 
             and stay current with the latest in software engineering, cloud computing, and personal finance.
           </p>
         </div>
