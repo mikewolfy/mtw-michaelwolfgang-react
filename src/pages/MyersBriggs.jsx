@@ -77,22 +77,118 @@ const MyersBriggs = () => {
   ];
 
   const personalityTypes = {
-    INTJ: { name: "The Architect", description: "Imaginative and strategic thinkers with a plan for everything." },
-    INTP: { name: "The Logician", description: "Innovative inventors with an unquenchable thirst for knowledge." },
-    ENTJ: { name: "The Commander", description: "Bold, imaginative, and strong-willed leaders who find a way or make one." },
-    ENTP: { name: "The Debater", description: "Smart and curious thinkers who cannot resist an intellectual challenge." },
-    INFJ: { name: "The Advocate", description: "Quiet and mystical, yet very inspiring and tireless idealists." },
-    INFP: { name: "The Mediator", description: "Poetic, kind, and altruistic people, always eager to help a good cause." },
-    ENFJ: { name: "The Protagonist", description: "Charismatic and inspiring leaders, able to mesmerize their listeners." },
-    ENFP: { name: "The Campaigner", description: "Enthusiastic, creative, and sociable free spirits who can always find a reason to smile." },
-    ISTJ: { name: "The Logistician", description: "Practical and fact-minded individuals whose reliability cannot be doubted." },
-    ISFJ: { name: "The Defender", description: "Very dedicated and warm protectors, always ready to defend their loved ones." },
-    ESTJ: { name: "The Executive", description: "Excellent administrators, unsurpassed at managing things or people." },
-    ESFJ: { name: "The Consul", description: "Extraordinarily caring, social, and popular people, always eager to help." },
-    ISTP: { name: "The Virtuoso", description: "Bold and practical experimenters, masters of all kinds of tools." },
-    ISFP: { name: "The Adventurer", description: "Flexible and charming artists, always ready to explore and experience something new." },
-    ESTP: { name: "The Entrepreneur", description: "Smart, energetic, and perceptive people who truly enjoy living on the edge." },
-    ESFP: { name: "The Entertainer", description: "Spontaneous, energetic, and enthusiastic people – life is never boring around them." }
+    INTJ: { 
+      name: "The Architect", 
+      description: "Imaginative and strategic thinkers with a plan for everything.",
+      howTheyOperate: "INTJs operate with systematic precision, analyzing problems deeply and developing long-term strategic solutions. They value competence and efficiency above all else.",
+      strengths: "Strategic planning, independent thinking, problem-solving, logical analysis, seeing the big picture, innovative systems design",
+      idealCareers: "Software Architect, Data Scientist, Strategic Consultant, Research Scientist, Systems Engineer, Investment Strategist, Professor"
+    },
+    INTP: { 
+      name: "The Logician", 
+      description: "Innovative inventors with an unquenchable thirst for knowledge.",
+      howTheyOperate: "INTPs operate by questioning everything and seeking to understand underlying principles. They thrive on theoretical exploration and building mental models of how things work.",
+      strengths: "Logical analysis, theoretical thinking, pattern recognition, innovative problem-solving, technical expertise, objective reasoning",
+      idealCareers: "Software Developer, Research Scientist, Mathematician, Data Analyst, Philosopher, Physicist, Technical Writer"
+    },
+    ENTJ: { 
+      name: "The Commander", 
+      description: "Bold, imaginative, and strong-willed leaders who find a way or make one.",
+      howTheyOperate: "ENTJs operate by taking charge and organizing resources toward clear goals. They naturally see inefficiencies and implement systems to optimize performance.",
+      strengths: "Leadership, strategic planning, decision-making, organizing people and resources, driving results, public speaking",
+      idealCareers: "CEO, Business Executive, Management Consultant, Corporate Lawyer, Entrepreneur, Operations Director, Judge"
+    },
+    ENTP: { 
+      name: "The Debater", 
+      description: "Smart and curious thinkers who cannot resist an intellectual challenge.",
+      howTheyOperate: "ENTPs operate by exploring multiple possibilities and challenging conventional thinking. They love debating ideas and finding innovative approaches to problems.",
+      strengths: "Innovation, brainstorming, strategic thinking, persuasion, adaptability, quick thinking, entrepreneurship",
+      idealCareers: "Entrepreneur, Marketing Strategist, Product Manager, Attorney, Innovation Consultant, Venture Capitalist, Inventor"
+    },
+    INFJ: { 
+      name: "The Advocate", 
+      description: "Quiet and mystical, yet very inspiring and tireless idealists.",
+      howTheyOperate: "INFJs operate with a deep sense of purpose and vision for helping others. They combine insight into human nature with a drive to create meaningful change.",
+      strengths: "Insight into people, counseling, writing, visionary thinking, empathy, dedication to causes, creative problem-solving",
+      idealCareers: "Counselor, Psychologist, Writer, Human Resources Director, Social Worker, Life Coach, Nonprofit Director"
+    },
+    INFP: { 
+      name: "The Mediator", 
+      description: "Poetic, kind, and altruistic people, always eager to help a good cause.",
+      howTheyOperate: "INFPs operate guided by their core values and seek authenticity in everything they do. They are deeply empathetic and motivated by making a positive impact.",
+      strengths: "Creative writing, empathy, mediation, artistic expression, understanding values, idealistic thinking, one-on-one connections",
+      idealCareers: "Writer, Therapist, Artist, Social Worker, Teacher, Graphic Designer, Musician, Nonprofit Worker"
+    },
+    ENFJ: { 
+      name: "The Protagonist", 
+      description: "Charismatic and inspiring leaders, able to mesmerize their listeners.",
+      howTheyOperate: "ENFJs operate by inspiring and motivating others toward shared goals. They naturally understand people's needs and help them reach their potential.",
+      strengths: "Leadership, motivating others, communication, teaching, empathy, organizational skills, public speaking",
+      idealCareers: "Teacher, HR Manager, Motivational Speaker, Counselor, Sales Manager, Event Coordinator, Politician"
+    },
+    ENFP: { 
+      name: "The Campaigner", 
+      description: "Enthusiastic, creative, and sociable free spirits who can always find a reason to smile.",
+      howTheyOperate: "ENFPs operate with boundless energy and enthusiasm, exploring possibilities and connecting with people. They thrive on variety and creative expression.",
+      strengths: "Creativity, communication, brainstorming, energizing others, adaptability, building relationships, innovation",
+      idealCareers: "Marketing Manager, Journalist, Entrepreneur, Teacher, Social Media Manager, Actor, Public Relations Specialist"
+    },
+    ISTJ: { 
+      name: "The Logistician", 
+      description: "Practical and fact-minded individuals whose reliability cannot be doubted.",
+      howTheyOperate: "ISTJs operate with discipline and adherence to established procedures. They value tradition, responsibility, and completing tasks thoroughly and accurately.",
+      strengths: "Organization, reliability, attention to detail, following procedures, practical problem-solving, integrity, consistency",
+      idealCareers: "Accountant, Project Manager, Auditor, Military Officer, Database Administrator, Compliance Officer, Financial Analyst"
+    },
+    ISFJ: { 
+      name: "The Defender", 
+      description: "Very dedicated and warm protectors, always ready to defend their loved ones.",
+      howTheyOperate: "ISFJs operate with quiet dedication, caring for others and maintaining harmony. They work behind the scenes to ensure everyone's needs are met.",
+      strengths: "Caregiving, attention to detail, loyalty, practical help, remembering personal details, reliability, patience",
+      idealCareers: "Nurse, Elementary Teacher, Office Manager, Librarian, Social Worker, Interior Designer, Administrator"
+    },
+    ESTJ: { 
+      name: "The Executive", 
+      description: "Excellent administrators, unsurpassed at managing things or people.",
+      howTheyOperate: "ESTJs operate by creating order and structure through clear rules and systems. They excel at organizing people and resources to achieve concrete results.",
+      strengths: "Management, organization, decision-making, implementing systems, direct communication, project coordination, efficiency",
+      idealCareers: "Operations Manager, Business Administrator, Military Officer, Police Officer, Judge, Financial Officer, Real Estate Agent"
+    },
+    ESFJ: { 
+      name: "The Consul", 
+      description: "Extraordinarily caring, social, and popular people, always eager to help.",
+      howTheyOperate: "ESFJs operate by creating harmony and caring for others' practical needs. They build community through cooperation and bring people together.",
+      strengths: "Building relationships, organizing events, caregiving, communication, creating harmony, attention to others' needs, hospitality",
+      idealCareers: "Event Planner, Elementary Teacher, Nurse, Office Manager, Social Worker, HR Specialist, Customer Service Manager"
+    },
+    ISTP: { 
+      name: "The Virtuoso", 
+      description: "Bold and practical experimenters, masters of all kinds of tools.",
+      howTheyOperate: "ISTPs operate through hands-on problem-solving and logical troubleshooting. They stay calm under pressure and excel at understanding how things work.",
+      strengths: "Mechanical skills, troubleshooting, practical problem-solving, crisis management, technical expertise, adaptability",
+      idealCareers: "Mechanic, Engineer, Pilot, Computer Technician, Carpenter, Detective, Paramedic, Athletic Trainer"
+    },
+    ISFP: { 
+      name: "The Adventurer", 
+      description: "Flexible and charming artists, always ready to explore and experience something new.",
+      howTheyOperate: "ISFPs operate by living in the moment and expressing themselves creatively. They value authenticity and seek beauty and harmony in their environment.",
+      strengths: "Artistic expression, adaptability, hands-on work, aesthetic sense, kindness, staying present, creativity",
+      idealCareers: "Artist, Designer, Photographer, Chef, Veterinarian, Physical Therapist, Fashion Designer, Musician"
+    },
+    ESTP: { 
+      name: "The Entrepreneur", 
+      description: "Smart, energetic, and perceptive people who truly enjoy living on the edge.",
+      howTheyOperate: "ESTPs operate by diving into action and adapting quickly to changing situations. They thrive in dynamic environments and excel at thinking on their feet.",
+      strengths: "Crisis management, negotiation, sales, hands-on problem-solving, adaptability, persuasion, risk-taking",
+      idealCareers: "Entrepreneur, Sales Manager, Paramedic, Marketing Director, Real Estate Developer, Stock Trader, Athletic Coach"
+    },
+    ESFP: { 
+      name: "The Entertainer", 
+      description: "Spontaneous, energetic, and enthusiastic people – life is never boring around them.",
+      howTheyOperate: "ESFPs operate by embracing life's pleasures and bringing joy to others. They live in the moment and create fun, engaging experiences for everyone around them.",
+      strengths: "Entertainment, communication, adaptability, creating excitement, hands-on learning, building rapport, team building",
+      idealCareers: "Actor, Event Planner, Tour Guide, Sales Representative, Teacher, Social Media Influencer, Fitness Instructor"
+    }
   };
 
   const handleAnswer = (selectedType) => {
@@ -214,6 +310,23 @@ const MyersBriggs = () => {
             <p className="text-xl text-gray-600">{typeInfo.description}</p>
           </div>
 
+          <div className="mb-8 space-y-6">
+            <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-6 border border-indigo-200">
+              <h3 className="text-lg font-bold text-indigo-800 mb-3">How You Operate</h3>
+              <p className="text-gray-700">{typeInfo.howTheyOperate}</p>
+            </div>
+
+            <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 border border-green-200">
+              <h3 className="text-lg font-bold text-green-800 mb-3">Your Strengths</h3>
+              <p className="text-gray-700">{typeInfo.strengths}</p>
+            </div>
+
+            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-6 border border-blue-200">
+              <h3 className="text-lg font-bold text-blue-800 mb-3">Ideal Career Paths</h3>
+              <p className="text-gray-700">{typeInfo.idealCareers}</p>
+            </div>
+          </div>
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
             <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl text-center border border-blue-200">
               <div className="text-3xl font-bold text-blue-600 mb-2">
@@ -291,110 +404,41 @@ const MyersBriggs = () => {
         <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
           <h3 className="text-3xl font-bold text-gray-800 mb-6 text-center">
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Understanding All 16 Personality Types
+              All 16 Personality Types - Complete Guide
             </span>
           </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Analysts */}
-            <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 border-2 border-purple-200">
-              <h4 className="text-xl font-bold text-purple-700 mb-3">INTJ - The Architect</h4>
-              <p className="text-gray-700 text-sm mb-2">Strategic, logical, and independent thinkers who see the world as a chessboard.</p>
-              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Approach challenges with strategic planning and long-term vision. <strong>With people:</strong> Value competence and intellectual depth, preferring meaningful conversations over small talk.</p>
-            </div>
+          <div className="space-y-6">
+            {Object.entries(personalityTypes).map(([type, info]) => (
+              <div key={type} className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 border-2 border-gray-200 hover:border-purple-300 transition-colors duration-300">
+                <div className="mb-4">
+                  <h4 className="text-2xl font-bold text-purple-700 mb-2 flex items-center gap-3">
+                    <span className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-1 rounded-lg text-xl">
+                      {type}
+                    </span>
+                    {info.name}
+                  </h4>
+                  <p className="text-gray-700 text-lg italic">{info.description}</p>
+                </div>
 
-            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 border-2 border-blue-200">
-              <h4 className="text-xl font-bold text-blue-700 mb-3">INTP - The Logician</h4>
-              <p className="text-gray-700 text-sm mb-2">Innovative inventors and philosophers who love exploring theoretical concepts.</p>
-              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Question everything and seek to understand underlying principles. <strong>With people:</strong> Share ideas enthusiastically but may struggle with emotional expression.</p>
-            </div>
+                <div className="space-y-4">
+                  <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-lg p-4 border border-indigo-200">
+                    <h5 className="text-base font-bold text-indigo-800 mb-2">How They Operate</h5>
+                    <p className="text-gray-700 text-sm">{info.howTheyOperate}</p>
+                  </div>
 
-            <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-xl p-6 border-2 border-indigo-200">
-              <h4 className="text-xl font-bold text-indigo-700 mb-3">ENTJ - The Commander</h4>
-              <p className="text-gray-700 text-sm mb-2">Bold leaders who excel at organizing people and resources toward goals.</p>
-              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Take charge and drive toward efficiency and results. <strong>With people:</strong> Direct and confident, valuing competence and expecting high performance.</p>
-            </div>
+                  <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-4 border border-green-200">
+                    <h5 className="text-base font-bold text-green-800 mb-2">Key Strengths</h5>
+                    <p className="text-gray-700 text-sm">{info.strengths}</p>
+                  </div>
 
-            <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl p-6 border-2 border-cyan-200">
-              <h4 className="text-xl font-bold text-cyan-700 mb-3">ENTP - The Debater</h4>
-              <p className="text-gray-700 text-sm mb-2">Quick-witted innovators who love intellectual challenges and debates.</p>
-              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Challenge conventions and explore multiple possibilities. <strong>With people:</strong> Engaging and charismatic, enjoying spirited discussions and mental sparring.</p>
-            </div>
-
-            {/* Diplomats */}
-            <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border-2 border-green-200">
-              <h4 className="text-xl font-bold text-green-700 mb-3">INFJ - The Advocate</h4>
-              <p className="text-gray-700 text-sm mb-2">Idealistic visionaries dedicated to helping others and making the world better.</p>
-              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Pursue meaningful causes with determination and insight. <strong>With people:</strong> Deeply empathetic and understanding, forming authentic connections.</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-teal-50 to-green-50 rounded-xl p-6 border-2 border-teal-200">
-              <h4 className="text-xl font-bold text-teal-700 mb-3">INFP - The Mediator</h4>
-              <p className="text-gray-700 text-sm mb-2">Compassionate idealists guided by their values and creativity.</p>
-              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Seek authenticity and align actions with core values. <strong>With people:</strong> Gentle and accepting, offering deep understanding and support.</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-emerald-50 to-green-50 rounded-xl p-6 border-2 border-emerald-200">
-              <h4 className="text-xl font-bold text-emerald-700 mb-3">ENFJ - The Protagonist</h4>
-              <p className="text-gray-700 text-sm mb-2">Charismatic leaders who inspire and motivate others to reach their potential.</p>
-              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Lead with vision and bring people together for common goals. <strong>With people:</strong> Warm and encouraging, naturally attuned to others' emotions and needs.</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-lime-50 to-green-50 rounded-xl p-6 border-2 border-lime-200">
-              <h4 className="text-xl font-bold text-lime-700 mb-3">ENFP - The Campaigner</h4>
-              <p className="text-gray-700 text-sm mb-2">Enthusiastic free spirits who see life as full of possibilities.</p>
-              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Explore ideas with creativity and spontaneity. <strong>With people:</strong> Energetic and optimistic, easily connecting and inspiring others.</p>
-            </div>
-
-            {/* Sentinels */}
-            <div className="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-xl p-6 border-2 border-amber-200">
-              <h4 className="text-xl font-bold text-amber-700 mb-3">ISTJ - The Logistician</h4>
-              <p className="text-gray-700 text-sm mb-2">Practical and responsible individuals who value order and reliability.</p>
-              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Follow established procedures and honor commitments. <strong>With people:</strong> Dependable and honest, preferring clear expectations and traditions.</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl p-6 border-2 border-orange-200">
-              <h4 className="text-xl font-bold text-orange-700 mb-3">ISFJ - The Defender</h4>
-              <p className="text-gray-700 text-sm mb-2">Dedicated protectors who care deeply about others' wellbeing.</p>
-              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Work diligently behind the scenes to maintain stability. <strong>With people:</strong> Warm and considerate, remembering details and providing practical help.</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-xl p-6 border-2 border-yellow-200">
-              <h4 className="text-xl font-bold text-yellow-700 mb-3">ESTJ - The Executive</h4>
-              <p className="text-gray-700 text-sm mb-2">Organized administrators who excel at managing tasks and people.</p>
-              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Create order through systems and clear rules. <strong>With people:</strong> Direct and decisive, expecting accountability and results.</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl p-6 border-2 border-red-200">
-              <h4 className="text-xl font-bold text-red-700 mb-3">ESFJ - The Consul</h4>
-              <p className="text-gray-700 text-sm mb-2">Caring helpers who thrive on bringing people together and fostering harmony.</p>
-              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Build community through cooperation and tradition. <strong>With people:</strong> Sociable and attentive, going out of their way to help others feel included.</p>
-            </div>
-
-            {/* Explorers */}
-            <div className="bg-gradient-to-br from-slate-50 to-gray-50 rounded-xl p-6 border-2 border-slate-200">
-              <h4 className="text-xl font-bold text-slate-700 mb-3">ISTP - The Virtuoso</h4>
-              <p className="text-gray-700 text-sm mb-2">Bold experimenters who excel at understanding how things work.</p>
-              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Approach challenges hands-on with practical problem-solving. <strong>With people:</strong> Reserved but friendly, sharing expertise when needed.</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl p-6 border-2 border-pink-200">
-              <h4 className="text-xl font-bold text-pink-700 mb-3">ISFP - The Adventurer</h4>
-              <p className="text-gray-700 text-sm mb-2">Flexible artists who live in the moment and express themselves creatively.</p>
-              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Seek beauty and new experiences with openness. <strong>With people:</strong> Gentle and sensitive, preferring harmony and personal expression.</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-gray-50 to-slate-50 rounded-xl p-6 border-2 border-gray-300">
-              <h4 className="text-xl font-bold text-gray-700 mb-3">ESTP - The Entrepreneur</h4>
-              <p className="text-gray-700 text-sm mb-2">Energetic risk-takers who thrive in dynamic, action-oriented environments.</p>
-              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Dive into action and adapt quickly to changing situations. <strong>With people:</strong> Bold and direct, enjoying excitement and social engagement.</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-xl p-6 border-2 border-rose-200">
-              <h4 className="text-xl font-bold text-rose-700 mb-3">ESFP - The Entertainer</h4>
-              <p className="text-gray-700 text-sm mb-2">Spontaneous performers who bring joy and excitement wherever they go.</p>
-              <p className="text-gray-600 text-sm"><strong>With the world:</strong> Embrace life's pleasures with enthusiasm and spontaneity. <strong>With people:</strong> Outgoing and fun-loving, naturally drawing others into the moment.</p>
-            </div>
+                  <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-4 border border-blue-200">
+                    <h5 className="text-base font-bold text-blue-800 mb-2">Ideal Career Paths</h5>
+                    <p className="text-gray-700 text-sm">{info.idealCareers}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
