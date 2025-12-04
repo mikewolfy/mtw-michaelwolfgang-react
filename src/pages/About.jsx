@@ -16,12 +16,12 @@ const About = () => {
           </p>
           <p>
             Beyond my professional work, I'm a husband and father, a Tae Kwon Do black belt 
-            and an avid runner. My best days are spent with my wonderful family, running
-            outdoors, and enjoying a good movie or book.
+            and an avid runner. My best days are spent with my my beautiful wife and
+            wonderful kids, running outdoors, and enjoying a good movie or book.
           </p>
           <p>
             I regularly listen to podcasts, read books, and stay current with the latest in software engineering, 
-            cloud computing, and personal finance.
+            cloud computing, self improvement and personal finance.
           </p>
         </div>
       </div>
