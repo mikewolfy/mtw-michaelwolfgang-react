@@ -36,45 +36,37 @@ const LoveLanguages = () => {
   }, [showResults]);
 
   const questions = [
-    // Questions 1-6
-    { id: 1, question: "I feel most loved when...", optionA: "My partner tells me they appreciate me", optionB: "My partner helps me with tasks", typeA: "wordsOfAffirmation", typeB: "actsOfService" },
-    { id: 2, question: "What makes me feel most valued?", optionA: "Receiving a thoughtful gift", optionB: "Getting a warm hug or kiss", typeA: "receivingGifts", typeB: "physicalTouch" },
-    { id: 3, question: "I prefer when my partner...", optionA: "Spends uninterrupted time with me", optionB: "Tells me I'm special to them", typeA: "qualityTime", typeB: "wordsOfAffirmation" },
-    { id: 4, question: "I feel more connected when...", optionA: "We hold hands or sit close together", optionB: "They surprise me with a small gift", typeA: "physicalTouch", typeB: "receivingGifts" },
-    { id: 5, question: "What matters most to me?", optionA: "When my partner does something helpful without being asked", optionB: "When we have deep conversations together", typeA: "actsOfService", typeB: "qualityTime" },
-    { id: 6, question: "I feel appreciated when...", optionA: "My partner compliments me", optionB: "My partner takes care of things for me", typeA: "wordsOfAffirmation", typeB: "actsOfService" },
-    
-    // Questions 7-12
-    { id: 7, question: "The best way to show love is...", optionA: "Giving meaningful presents", optionB: "Physical affection like hugs", typeA: "receivingGifts", typeB: "physicalTouch" },
-    { id: 8, question: "I value most when...", optionA: "We spend quality time together", optionB: "I hear encouraging words", typeA: "qualityTime", typeB: "wordsOfAffirmation" },
-    { id: 9, question: "I feel closest when...", optionA: "We're physically close", optionB: "They remember special occasions with gifts", typeA: "physicalTouch", typeB: "receivingGifts" },
-    { id: 10, question: "What means the most?", optionA: "When my partner helps with my responsibilities", optionB: "When we do activities together", typeA: "actsOfService", typeB: "qualityTime" },
-    { id: 11, question: "I prefer to receive...", optionA: "Words of praise and encouragement", optionB: "Help with projects or chores", typeA: "wordsOfAffirmation", typeB: "actsOfService" },
-    { id: 12, question: "I feel more loved when...", optionA: "I receive a thoughtful present", optionB: "I get a massage or physical comfort", typeA: "receivingGifts", typeB: "physicalTouch" },
-    
-    // Questions 13-18
-    { id: 13, question: "What's most important?", optionA: "Having my partner's undivided attention", optionB: "Hearing how much I'm loved", typeA: "qualityTime", typeB: "wordsOfAffirmation" },
-    { id: 14, question: "I appreciate when...", optionA: "My partner touches me affectionately", optionB: "My partner brings me gifts", typeA: "physicalTouch", typeB: "receivingGifts" },
-    { id: 15, question: "I feel supported when...", optionA: "My partner does things to help me", optionB: "We spend time together doing things I enjoy", typeA: "actsOfService", typeB: "qualityTime" },
-    { id: 16, question: "The best gift is...", optionA: "Verbal compliments and appreciation", optionB: "Practical help with tasks", typeA: "wordsOfAffirmation", typeB: "actsOfService" },
-    { id: 17, question: "I value most...", optionA: "Receiving surprise gifts", optionB: "Physical closeness and touch", typeA: "receivingGifts", typeB: "physicalTouch" },
-    { id: 18, question: "I feel loved when...", optionA: "We have meaningful conversations", optionB: "I hear words of affirmation", typeA: "qualityTime", typeB: "wordsOfAffirmation" },
-    
-    // Questions 19-24
-    { id: 19, question: "What makes me happiest?", optionA: "Physical affection from my partner", optionB: "Thoughtful gifts that show they care", typeA: "physicalTouch", typeB: "receivingGifts" },
-    { id: 20, question: "I prefer when...", optionA: "My partner helps solve my problems", optionB: "We spend quality time together", typeA: "actsOfService", typeB: "qualityTime" },
-    { id: 21, question: "I feel more secure when...", optionA: "I hear loving words", optionB: "My partner does things for me", typeA: "wordsOfAffirmation", typeB: "actsOfService" },
-    { id: 22, question: "The most meaningful is...", optionA: "A carefully chosen gift", optionB: "A comforting touch or hug", typeA: "receivingGifts", typeB: "physicalTouch" },
-    { id: 23, question: "I appreciate most...", optionA: "Spending focused time together", optionB: "Receiving compliments", typeA: "qualityTime", typeB: "wordsOfAffirmation" },
-    { id: 24, question: "I feel cared for when...", optionA: "I'm touched affectionately", optionB: "I receive meaningful gifts", typeA: "physicalTouch", typeB: "receivingGifts" },
-    
-    // Questions 25-30
-    { id: 25, question: "What's most valuable?", optionA: "When my partner helps me with tasks", optionB: "When we have uninterrupted time together", typeA: "actsOfService", typeB: "qualityTime" },
-    { id: 26, question: "I feel loved when...", optionA: "I hear positive, affirming words", optionB: "My partner takes care of my needs", typeA: "wordsOfAffirmation", typeB: "actsOfService" },
-    { id: 27, question: "The best expression of love is...", optionA: "A thoughtful present", optionB: "Physical affection", typeA: "receivingGifts", typeB: "physicalTouch" },
-    { id: 28, question: "I value when...", optionA: "We spend time doing things together", optionB: "I receive words of encouragement", typeA: "qualityTime", typeB: "wordsOfAffirmation" },
-    { id: 29, question: "I appreciate most...", optionA: "Warm physical contact", optionB: "Gifts that show thoughtfulness", typeA: "physicalTouch", typeB: "receivingGifts" },
-    { id: 30, question: "I feel most valued when...", optionA: "My partner helps with responsibilities", optionB: "We have quality conversations", typeA: "actsOfService", typeB: "qualityTime" }
+    // Mixed order with varied wording
+    { id: 1, question: "I feel most loved when my partner...", optionA: "Gives me a heartfelt compliment", optionB: "Surprises me with a small gift", typeA: "wordsOfAffirmation", typeB: "receivingGifts" },
+    { id: 2, question: "What makes me feel closest to my partner?", optionA: "Sitting together having deep conversations", optionB: "Cuddling on the couch", typeA: "qualityTime", typeB: "physicalTouch" },
+    { id: 3, question: "I appreciate it when...", optionA: "My partner remembers special occasions with a present", optionB: "My partner takes care of chores without being asked", typeA: "receivingGifts", typeB: "actsOfService" },
+    { id: 4, question: "The gesture that touches my heart most is...", optionA: "A warm embrace after a long day", optionB: "Hearing 'I'm proud of you'", typeA: "physicalTouch", typeB: "wordsOfAffirmation" },
+    { id: 5, question: "I feel valued when my partner...", optionA: "Helps me tackle my to-do list", optionB: "Plans a special date night just for us", typeA: "actsOfService", typeB: "qualityTime" },
+    { id: 6, question: "Which means more to me?", optionA: "Receiving a thoughtful token of affection", optionB: "Getting a gentle back rub", typeA: "receivingGifts", typeB: "physicalTouch" },
+    { id: 7, question: "I feel most connected when...", optionA: "We're doing activities side by side", optionB: "I hear encouraging and supportive words", typeA: "qualityTime", typeB: "wordsOfAffirmation" },
+    { id: 8, question: "What shows love best to me?", optionA: "My partner fixing things around the house", optionB: "Holding hands while we walk", typeA: "actsOfService", typeB: "physicalTouch" },
+    { id: 9, question: "I appreciate when my partner...", optionA: "Tells me what they love about me", optionB: "Brings home my favorite treat", typeA: "wordsOfAffirmation", typeB: "receivingGifts" },
+    { id: 10, question: "I feel happiest when...", optionA: "We spend uninterrupted hours together", optionB: "My partner pitches in with household tasks", typeA: "qualityTime", typeB: "actsOfService" },
+    { id: 11, question: "The most meaningful gesture is...", optionA: "A loving kiss or hug", optionB: "Being told 'You matter to me'", typeA: "physicalTouch", typeB: "wordsOfAffirmation" },
+    { id: 12, question: "I feel cared for when...", optionA: "I receive a gift that shows they know me", optionB: "My partner helps me when I'm overwhelmed", typeA: "receivingGifts", typeB: "actsOfService" },
+    { id: 13, question: "What makes me feel secure in a relationship?", optionA: "Physical closeness and affection", optionB: "Having my partner's full attention", typeA: "physicalTouch", typeB: "qualityTime" },
+    { id: 14, question: "I value most when my partner...", optionA: "Offers genuine praise for my efforts", optionB: "Does the dishes or runs errands for me", typeA: "wordsOfAffirmation", typeB: "actsOfService" },
+    { id: 15, question: "The best way to show you care is...", optionA: "Spending quality time doing something I enjoy", optionB: "Picking out a perfect gift for me", typeA: "qualityTime", typeB: "receivingGifts" },
+    { id: 16, question: "I feel most appreciated when...", optionA: "My partner touches my arm or shoulder lovingly", optionB: "I receive a surprise present", typeA: "physicalTouch", typeB: "receivingGifts" },
+    { id: 17, question: "Which would make my day?", optionA: "Hearing 'I appreciate everything you do'", optionB: "Coming home to a clean house", typeA: "wordsOfAffirmation", typeB: "actsOfService" },
+    { id: 18, question: "I feel loved when my partner...", optionA: "Puts away their phone to really listen to me", optionB: "Greets me with a warm hug", typeA: "qualityTime", typeB: "physicalTouch" },
+    { id: 19, question: "What matters most in showing affection?", optionA: "Thoughtful presents on special days", optionB: "Helping with projects or responsibilities", typeA: "receivingGifts", typeB: "actsOfService" },
+    { id: 20, question: "I appreciate it more when...", optionA: "I'm told I look great or did a good job", optionB: "We go on adventures together", typeA: "wordsOfAffirmation", typeB: "qualityTime" },
+    { id: 21, question: "I feel closest when my partner...", optionA: "Gives me a massage or holds me close", optionB: "Brings me flowers or a gift just because", typeA: "physicalTouch", typeB: "receivingGifts" },
+    { id: 22, question: "The best surprise would be...", optionA: "Help completing a task I've been dreading", optionB: "A thoughtful card or present", typeA: "actsOfService", typeB: "receivingGifts" },
+    { id: 23, question: "I value when my partner...", optionA: "Sits close to me on the couch", optionB: "Makes time for just the two of us", typeA: "physicalTouch", typeB: "qualityTime" },
+    { id: 24, question: "What makes me feel special?", optionA: "Verbal expressions of love and admiration", optionB: "Physical affection throughout the day", typeA: "wordsOfAffirmation", typeB: "physicalTouch" },
+    { id: 25, question: "I feel supported when...", optionA: "My partner makes dinner or handles errands", optionB: "We have meaningful conversations together", typeA: "actsOfService", typeB: "qualityTime" },
+    { id: 26, question: "Which gesture means more?", optionA: "A carefully chosen gift", optionB: "Words of encouragement when I'm struggling", typeA: "receivingGifts", typeB: "wordsOfAffirmation" },
+    { id: 27, question: "I feel most cherished when...", optionA: "We take a walk together and just talk", optionB: "My partner takes care of something I needed done", typeA: "qualityTime", typeB: "actsOfService" },
+    { id: 28, question: "What fills my heart?", optionA: "A tender touch or kiss", optionB: "A souvenir or memento from a trip", typeA: "physicalTouch", typeB: "receivingGifts" },
+    { id: 29, question: "I appreciate most when my partner...", optionA: "Handles responsibilities so I can relax", optionB: "Snuggles with me while watching a movie", typeA: "actsOfService", typeB: "physicalTouch" },
+    { id: 30, question: "I feel most understood when...", optionA: "I hear affirming words about who I am", optionB: "We dedicate time to be fully present together", typeA: "wordsOfAffirmation", typeB: "qualityTime" }
   ];
 
   const loveLanguageInfo = {
