@@ -102,7 +102,12 @@ const LoveLanguages = () => {
     }
   };
 
-  const handleAnswer = (selectedLanguage) => {
+  const handleAnswer = (selectedLanguage, event) => {
+    // Blur the button to remove focus/selection state
+    if (event && event.currentTarget) {
+      event.currentTarget.blur();
+    }
+    
     const newScores = { ...scores };
     newScores[selectedLanguage]++;
     setScores(newScores);
@@ -410,16 +415,16 @@ const LoveLanguages = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <button
-            onClick={() => handleAnswer(currentQ.typeA)}
-            className="group bg-gradient-to-br from-rose-50 to-rose-100 hover:from-rose-100 hover:to-rose-200 p-8 rounded-2xl border-2 border-rose-200 hover:border-rose-400 transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+            onClick={(e) => handleAnswer(currentQ.typeA, e)}
+            className="group bg-gradient-to-br from-rose-50 to-rose-100 hover:from-rose-100 hover:to-rose-200 p-8 rounded-2xl border-2 border-rose-200 hover:border-rose-400 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 focus:outline-none"
           >
             <div className="text-4xl font-bold text-rose-600 mb-3 group-hover:scale-110 transition-transform">A</div>
             <p className="text-lg text-gray-700 font-medium">{currentQ.optionA}</p>
           </button>
 
           <button
-            onClick={() => handleAnswer(currentQ.typeB)}
-            className="group bg-gradient-to-br from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 p-8 rounded-2xl border-2 border-purple-200 hover:border-purple-400 transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+            onClick={(e) => handleAnswer(currentQ.typeB, e)}
+            className="group bg-gradient-to-br from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 p-8 rounded-2xl border-2 border-purple-200 hover:border-purple-400 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 focus:outline-none"
           >
             <div className="text-4xl font-bold text-purple-600 mb-3 group-hover:scale-110 transition-transform">B</div>
             <p className="text-lg text-gray-700 font-medium">{currentQ.optionB}</p>
