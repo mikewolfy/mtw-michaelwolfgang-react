@@ -8,6 +8,8 @@ import Developer from './pages/Developer/Developer';
 import InterviewQuestions from './pages/Developer/InterviewQuestions';
 import Podcasts from './pages/Developer/Podcasts';
 import Resources from './pages/Developer/Resources';
+import JwtDecoder from './pages/Developer/JwtDecoder';
+import RsaValidator from './pages/Developer/RsaValidator';
 import Reed from './pages/Family/Reed';
 import Emma from './pages/Family/Emma';
 import MomDad from './pages/Family/MomDad';
@@ -31,6 +33,8 @@ function App() {
           <Route path="developer/interview-questions" element={<InterviewQuestions />} />
           <Route path="developer/podcasts" element={<Podcasts />} />
           <Route path="developer/resources" element={<Resources />} />
+          <Route path="developer/jwt-decoder" element={<JwtDecoder />} />
+          <Route path="developer/rsa-validator" element={<RsaValidator />} />
           <Route path="developer/certifications" element={<Developer />} />
           <Route path="developer/languages" element={<Developer />} />
           <Route path="developer/devops" element={<Developer />} />
