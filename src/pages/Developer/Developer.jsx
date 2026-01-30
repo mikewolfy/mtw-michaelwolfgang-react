@@ -80,6 +80,22 @@ const Developer = () => {
           <h3 className="text-xl font-bold text-amber-600 mb-2 group-hover:text-yellow-600 transition-colors">Interview Questions</h3>
           <p className="text-gray-600">Common interview questions</p>
         </Link>
+
+        <Link 
+          to="/developer/jwt-decoder" 
+          className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 group"
+        >
+          <h3 className="text-xl font-bold text-cyan-600 mb-2 group-hover:text-blue-600 transition-colors">JWT Decoder</h3>
+          <p className="text-gray-600">Decode and inspect JWT tokens</p>
+        </Link>
+
+        <Link 
+          to="/developer/rsa-validator" 
+          className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 group"
+        >
+          <h3 className="text-xl font-bold text-emerald-600 mb-2 group-hover:text-green-600 transition-colors">RSA Signature Validator</h3>
+          <p className="text-gray-600">Verify RSA-signed strings</p>
+        </Link>
       </div>
     </div>
   );
