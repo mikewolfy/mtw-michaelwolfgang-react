@@ -15,6 +15,7 @@ import Emma from './pages/Family/Emma';
 import MomDad from './pages/Family/MomDad';
 import MyersBriggs from './pages/MyersBriggs';
 import LoveLanguages from './pages/LoveLanguages';
+import LifeTimers from './pages/LifeTimers';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="links" element={<Links />} />
           <Route path="myers-briggs" element={<MyersBriggs />} />
           <Route path="love-languages" element={<LoveLanguages />} />
+          <Route path="life-timers" element={<LifeTimers />} />
           
           {/* Developer Routes */}
           <Route path="developer" element={<Developer />} />
