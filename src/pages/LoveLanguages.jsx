@@ -168,42 +168,42 @@ const LoveLanguages = () => {
     return (
       <div className="max-w-4xl mx-auto space-y-8">
         <div className="text-center mb-8">
-          <h1 className="text-5xl font-extrabold bg-gradient-to-r from-rose-600 via-pink-600 to-purple-600 bg-clip-text text-transparent mb-4">
+          <h1 className="text-4xl font-bold text-slate-800 mb-4">
             The 5 Love Languages Test
           </h1>
-          <p className="text-gray-600 text-lg">Welcome back!</p>
+          <p className="text-slate-500 text-lg">Welcome back!</p>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-2xl p-10 border border-gray-100">
+        <div className="bg-white rounded-xl shadow-sm p-10 border border-slate-200">
           <div className="text-center mb-8">
-            <div className="inline-block bg-gradient-to-r from-rose-500 to-purple-500 text-white px-6 py-3 rounded-xl text-xl font-bold mb-4">
+            <div className="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl text-xl font-bold mb-4">
               Previous Result Found
             </div>
-            <h2 className="text-2xl font-bold text-gray-800 mb-2">
+            <h2 className="text-2xl font-bold text-slate-800 mb-2">
               You took this test on {formattedDate}
             </h2>
-            <p className="text-xl text-gray-600">
-              Your top love language was: <span className="font-bold text-rose-600">{topLanguage.name}</span>
+            <p className="text-xl text-slate-600">
+              Your top love language was: <span className="font-bold text-blue-600">{topLanguage.name}</span>
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <button
               onClick={loadPreviousResults}
-              className="group bg-gradient-to-br from-rose-50 to-rose-100 hover:from-rose-100 hover:to-rose-200 p-8 rounded-2xl border-2 border-rose-200 hover:border-rose-400 transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+              className="group bg-slate-50 hover:bg-slate-100 p-8 rounded-xl border-2 border-slate-200 hover:border-blue-400 transition-all duration-200"
             >
               <div className="text-4xl mb-4">📊</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">View Previous Results</h3>
-              <p className="text-gray-600">See your full love language rankings from {formattedDate}</p>
+              <h3 className="text-xl font-bold text-slate-800 mb-2">View Previous Results</h3>
+              <p className="text-slate-600">See your full love language rankings from {formattedDate}</p>
             </button>
 
             <button
               onClick={startNewTest}
-              className="group bg-gradient-to-br from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 p-8 rounded-2xl border-2 border-purple-200 hover:border-purple-400 transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+              className="group bg-slate-50 hover:bg-slate-100 p-8 rounded-xl border-2 border-slate-200 hover:border-blue-400 transition-all duration-200"
             >
               <div className="text-4xl mb-4">🔄</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">Take Test Again</h3>
-              <p className="text-gray-600">Start a new test and update your results</p>
+              <h3 className="text-xl font-bold text-slate-800 mb-2">Take Test Again</h3>
+              <p className="text-slate-600">Start a new test and update your results</p>
             </button>
           </div>
         </div>
@@ -220,17 +220,17 @@ const LoveLanguages = () => {
     return (
       <div className="max-w-5xl mx-auto space-y-8">
         <div className="text-center mb-8">
-          <h1 className="text-5xl font-extrabold bg-gradient-to-r from-rose-600 via-pink-600 to-purple-600 bg-clip-text text-transparent mb-4">
+          <h1 className="text-4xl font-bold text-slate-800 mb-4">
             Your Love Languages
           </h1>
-          <p className="text-gray-600 text-lg">Ranked from strongest to weakest</p>
+          <p className="text-slate-500 text-lg">Ranked from strongest to weakest</p>
         </div>
 
         <div className="space-y-6">
           {rankedLanguages.map((language, index) => (
             <div 
               key={language.key}
-              className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 transform transition-all duration-300 hover:shadow-2xl"
+              className="bg-white rounded-xl shadow-sm p-8 border border-slate-200 transform transition-all duration-200 hover:shadow-md"
             >
               <div className="flex items-start gap-6">
                 <div className="flex-shrink-0">
@@ -244,19 +244,19 @@ const LoveLanguages = () => {
                     <span className={`inline-flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br ${language.color} text-white font-bold text-sm`}>
                       #{index + 1}
                     </span>
-                    <h2 className="text-2xl font-bold text-gray-800">{language.name}</h2>
+                    <h2 className="text-2xl font-bold text-slate-800">{language.name}</h2>
                   </div>
                   
-                  <p className="text-gray-700 mb-4">{language.description}</p>
+                  <p className="text-slate-700 mb-4">{language.description}</p>
                   
                   <div className="flex items-center gap-4">
-                    <div className="flex-grow bg-gray-200 rounded-full h-3 overflow-hidden">
+                    <div className="flex-grow bg-slate-200 rounded-full h-3 overflow-hidden">
                       <div 
                         className={`h-3 rounded-full bg-gradient-to-r ${language.color} transition-all duration-1000`}
                         style={{ width: `${(language.score / 30) * 100}%` }}
                       ></div>
                     </div>
-                    <span className="text-lg font-bold text-gray-700 min-w-[4rem] text-right">
+                    <span className="text-lg font-bold text-slate-700 min-w-[4rem] text-right">
                       {language.score}/30
                     </span>
                   </div>
@@ -266,36 +266,34 @@ const LoveLanguages = () => {
           ))}
         </div>
 
-        <div className="bg-gradient-to-r from-rose-50 to-purple-50 rounded-2xl p-8 border border-rose-200">
-          <h3 className="text-2xl font-bold text-gray-800 mb-4">About the 5 Love Languages</h3>
-          <p className="text-gray-700 mb-4">
+          <div className="bg-slate-50 rounded-xl p-8 border border-slate-200">
+          <h3 className="text-2xl font-bold text-slate-800 mb-4">About the 5 Love Languages</h3>
+          <p className="text-slate-700 mb-4">
             The 5 Love Languages, developed by Dr. Gary Chapman, describes five ways people express and experience love:
           </p>
-          <ul className="space-y-2 text-gray-700 mb-6">
+            <ul className="space-y-2 text-slate-700 mb-6">
             <li><strong>Words of Affirmation:</strong> Verbal expressions of love and appreciation</li>
             <li><strong>Quality Time:</strong> Undivided attention and meaningful connection</li>
             <li><strong>Receiving Gifts:</strong> Tangible symbols of love and thoughtfulness</li>
             <li><strong>Acts of Service:</strong> Helpful actions that ease burdens</li>
             <li><strong>Physical Touch:</strong> Physical expressions of affection</li>
           </ul>
-          <p className="text-gray-700">
+          <p className="text-slate-700">
             Understanding your love languages helps you communicate your needs and better understand how others express their love.
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-          <h3 className="text-3xl font-bold text-gray-800 mb-6 text-center">
-            <span className="bg-gradient-to-r from-rose-600 to-purple-600 bg-clip-text text-transparent">
+          <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200">
+          <h3 className="text-2xl font-bold text-slate-800 mb-6 text-center">
               Ways to Communicate with Each Love Language
-            </span>
           </h3>
 
           <div className="space-y-6">
             <div className="border-l-4 border-blue-500 pl-6 py-2">
-              <h4 className="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
+              <h4 className="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2">
                 <span className="text-2xl">💬</span> Words of Affirmation
               </h4>
-              <ul className="space-y-2 text-gray-700">
+              <ul className="space-y-2 text-slate-700">
                 <li>• Say "I love you" and "I appreciate you" often</li>
                 <li>• Give genuine compliments about their appearance, achievements, or character</li>
                 <li>• Write love notes, texts, or cards expressing your feelings</li>
@@ -307,10 +305,10 @@ const LoveLanguages = () => {
             </div>
 
             <div className="border-l-4 border-green-500 pl-6 py-2">
-              <h4 className="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
+              <h4 className="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2">
                 <span className="text-2xl">⏰</span> Quality Time
               </h4>
-              <ul className="space-y-2 text-gray-700">
+              <ul className="space-y-2 text-slate-700">
                 <li>• Put away your phone and give undivided attention</li>
                 <li>• Plan regular date nights or special outings together</li>
                 <li>• Have meaningful conversations without distractions</li>
@@ -322,10 +320,10 @@ const LoveLanguages = () => {
             </div>
 
             <div className="border-l-4 border-purple-500 pl-6 py-2">
-              <h4 className="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
+              <h4 className="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2">
                 <span className="text-2xl">🎁</span> Receiving Gifts
               </h4>
-              <ul className="space-y-2 text-gray-700">
+              <ul className="space-y-2 text-slate-700">
                 <li>• Give thoughtful gifts that show you were thinking of them</li>
                 <li>• Remember special occasions (birthdays, anniversaries, holidays)</li>
                 <li>• Bring back souvenirs when you travel</li>
@@ -337,10 +335,10 @@ const LoveLanguages = () => {
             </div>
 
             <div className="border-l-4 border-orange-500 pl-6 py-2">
-              <h4 className="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
+              <h4 className="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2">
                 <span className="text-2xl">🤝</span> Acts of Service
               </h4>
-              <ul className="space-y-2 text-gray-700">
+              <ul className="space-y-2 text-slate-700">
                 <li>• Help with household chores (dishes, laundry, cleaning)</li>
                 <li>• Cook their favorite meal or pack their lunch</li>
                 <li>• Run errands for them when they're busy</li>
@@ -352,10 +350,10 @@ const LoveLanguages = () => {
             </div>
 
             <div className="border-l-4 border-rose-500 pl-6 py-2">
-              <h4 className="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
+              <h4 className="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2">
                 <span className="text-2xl">🤗</span> Physical Touch
               </h4>
-              <ul className="space-y-2 text-gray-700">
+              <ul className="space-y-2 text-slate-700">
                 <li>• Hold hands while walking or sitting together</li>
                 <li>• Give hugs, kisses, and physical affection regularly</li>
                 <li>• Offer back rubs, massages, or gentle touches</li>
@@ -371,7 +369,7 @@ const LoveLanguages = () => {
         <div className="text-center">
           <button
             onClick={resetTest}
-            className="bg-gradient-to-r from-rose-600 to-purple-600 text-white px-8 py-3 rounded-xl font-bold hover:from-rose-700 hover:to-purple-700 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+            className="bg-blue-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-700 transition-colors duration-200"
           >
             Take Test Again
           </button>
@@ -383,51 +381,51 @@ const LoveLanguages = () => {
   return (
     <div className="max-w-4xl mx-auto space-y-8">
       <div className="text-center mb-8">
-        <h1 className="text-5xl font-extrabold bg-gradient-to-r from-rose-600 via-pink-600 to-purple-600 bg-clip-text text-transparent mb-4">
+        <h1 className="text-4xl font-bold text-slate-800 mb-4">
           The 5 Love Languages Test
         </h1>
-        <p className="text-gray-600 text-lg">Discover how you prefer to give and receive love</p>
+        <p className="text-slate-500 text-lg">Discover how you prefer to give and receive love</p>
       </div>
 
       {/* Progress Bar */}
-      <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100">
+      <div className="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
         <div className="flex justify-between items-center mb-3">
-          <span className="text-sm font-semibold text-gray-700">
+          <span className="text-sm font-semibold text-slate-700">
             Question {currentQuestion + 1} of {questions.length}
           </span>
-          <span className="text-sm font-semibold text-rose-600">
+          <span className="text-sm font-semibold text-blue-600">
             {Math.round(progress)}% Complete
           </span>
         </div>
-        <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+        <div className="w-full bg-slate-200 rounded-full h-3 overflow-hidden">
           <div 
-            className="bg-gradient-to-r from-rose-500 to-purple-500 h-3 rounded-full transition-all duration-500 ease-out"
+            className="bg-blue-600 h-3 rounded-full transition-all duration-500 ease-out"
             style={{ width: `${progress}%` }}
           ></div>
         </div>
       </div>
 
       {/* Question Card */}
-      <div className="bg-white rounded-2xl shadow-2xl p-10 border border-gray-100">
-        <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
+      <div className="bg-white rounded-xl shadow-sm p-10 border border-slate-200">
+        <h2 className="text-3xl font-bold text-slate-800 mb-8 text-center">
           {currentQ.question}
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <button
             onClick={(e) => handleAnswer(currentQ.typeA, e)}
-            className="group bg-gradient-to-br from-rose-50 to-rose-100 hover:from-rose-100 hover:to-rose-200 p-8 rounded-2xl border-2 border-rose-200 hover:border-rose-400 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 focus:outline-none"
+            className="group bg-slate-50 hover:bg-blue-50 p-8 rounded-xl border-2 border-slate-200 hover:border-blue-400 transition-all duration-200 focus:outline-none"
           >
-            <div className="text-4xl font-bold text-rose-600 mb-3 group-hover:scale-110 transition-transform">A</div>
-            <p className="text-lg text-gray-700 font-medium">{currentQ.optionA}</p>
+            <div className="text-4xl font-bold text-blue-600 mb-3 group-hover:scale-110 transition-transform">A</div>
+            <p className="text-lg text-slate-700 font-medium">{currentQ.optionA}</p>
           </button>
 
           <button
             onClick={(e) => handleAnswer(currentQ.typeB, e)}
-            className="group bg-gradient-to-br from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 p-8 rounded-2xl border-2 border-purple-200 hover:border-purple-400 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 focus:outline-none"
+            className="group bg-slate-50 hover:bg-slate-100 p-8 rounded-xl border-2 border-slate-200 hover:border-slate-400 transition-all duration-200 focus:outline-none"
           >
-            <div className="text-4xl font-bold text-purple-600 mb-3 group-hover:scale-110 transition-transform">B</div>
-            <p className="text-lg text-gray-700 font-medium">{currentQ.optionB}</p>
+            <div className="text-4xl font-bold text-slate-600 mb-3 group-hover:scale-110 transition-transform">B</div>
+            <p className="text-lg text-slate-700 font-medium">{currentQ.optionB}</p>
           </button>
         </div>
       </div>
@@ -436,7 +434,7 @@ const LoveLanguages = () => {
         <div className="text-center">
           <button
             onClick={() => setCurrentQuestion(currentQuestion - 1)}
-            className="text-gray-600 hover:text-gray-800 font-medium underline"
+            className="text-slate-600 hover:text-slate-800 font-medium underline"
           >
             ← Go Back
           </button>

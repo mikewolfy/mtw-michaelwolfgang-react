@@ -7,7 +7,7 @@ const Section = ({ title, children }) => (
 
 const SubSection = ({ title, children }) => (
   <div className="mb-6">
-    <h3 className="text-lg font-semibold text-indigo-700 mb-2">{title}</h3>
+    <h3 className="text-lg font-semibold text-blue-600 mb-2">{title}</h3>
     {children}
   </div>
 );

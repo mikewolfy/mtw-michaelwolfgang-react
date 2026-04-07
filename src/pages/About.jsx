@@ -2,13 +2,13 @@ const About = () => {
   return (
     <div className="space-y-8">
       <div className="text-center mb-8">
-        <h1 className="text-5xl font-extrabold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">About Me</h1>
-        <p className="text-gray-600 text-lg">Software Engineer, Runner, Investor, and Lifelong Learner</p>
+        <h1 className="text-4xl font-bold text-slate-800 mb-4">About Me</h1>
+        <p className="text-slate-500 text-lg">Software Engineer, Runner, Investor, and Lifelong Learner</p>
       </div>
       
-      <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
-        <h2 className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-6">Michael Wolfgang</h2>
-        <div className="space-y-4 text-gray-700">
+      <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200">
+        <h2 className="text-2xl font-bold text-slate-800 border-l-4 border-blue-600 pl-3 mb-6">Michael Wolfgang</h2>
+        <div className="space-y-4 text-slate-700">
           <p>
             I'm a Software Engineer and Architect with a passion for building enterprise applications 
             and APIs using modern cloud technologies. I work at CarMax, where I apply my experience 

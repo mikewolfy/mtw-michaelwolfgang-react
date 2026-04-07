@@ -89,17 +89,17 @@ const JwtDecoder = () => {
   return (
     <div className="space-y-8">
       <div className="text-center mb-8">
-        <h1 className="text-5xl font-extrabold bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
+        <h1 className="text-4xl font-bold text-slate-800 mb-4">
           JWT Decoder
         </h1>
-        <p className="text-gray-600 text-lg">
+        <p className="text-slate-500 text-lg">
           Decode and inspect JSON Web Tokens (JWT)
         </p>
       </div>
 
-      <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+      <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200">
         <div className="mb-6">
-          <label htmlFor="jwt-input" className="block text-lg font-semibold text-gray-700 mb-2">
+          <label htmlFor="jwt-input" className="block text-lg font-semibold text-slate-700 mb-2">
             Paste your JWT token here:
           </label>
           <textarea
@@ -147,8 +147,8 @@ const JwtDecoder = () => {
                 </pre>
                 
                 {/* Common Claims Explanation */}
-                <div className="mt-4 text-sm text-gray-600 space-y-1">
-                  <p className="font-semibold text-gray-700">Common JWT Claims:</p>
+                <div className="mt-4 text-sm text-slate-600 space-y-1">
+                  <p className="font-semibold text-slate-700">Common JWT Claims:</p>
                   {decodedPayload.iss && <p><strong>iss:</strong> Issuer</p>}
                   {decodedPayload.sub && <p><strong>sub:</strong> Subject</p>}
                   {decodedPayload.aud && <p><strong>aud:</strong> Audience</p>}
@@ -167,7 +167,7 @@ const JwtDecoder = () => {
                 <div className="bg-white p-4 rounded-lg overflow-x-auto text-sm border border-purple-100">
                   <p className="font-mono break-all">{signature}</p>
                 </div>
-                <p className="mt-2 text-sm text-gray-600">
+                <p className="mt-2 text-sm text-slate-600">
                   <strong>Note:</strong> The signature is encrypted and cannot be decoded. 
                   It's used to verify that the token hasn't been tampered with.
                 </p>
@@ -177,11 +177,11 @@ const JwtDecoder = () => {
         )}
 
         {!jwt && (
-          <div className="bg-gray-50 rounded-lg p-8 text-center border border-gray-200">
-            <p className="text-gray-600">
+          <div className="bg-slate-50 rounded-lg p-8 text-center border border-slate-200">
+            <p className="text-slate-600">
               Enter a JWT token above to decode and view its contents
             </p>
-            <p className="text-sm text-gray-500 mt-2">
+            <p className="text-sm text-slate-500 mt-2">
               JWTs consist of three parts: Header, Payload, and Signature
             </p>
           </div>
@@ -189,9 +189,9 @@ const JwtDecoder = () => {
       </div>
 
       {/* Information Section */}
-      <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">About JWT Tokens</h2>
-        <div className="space-y-3 text-gray-600">
+      <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200">
+        <h2 className="text-2xl font-bold text-slate-800 mb-4">About JWT Tokens</h2>
+        <div className="space-y-3 text-slate-600">
           <p>
             A JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained 
             way for securely transmitting information between parties as a JSON object.
