@@ -16,6 +16,8 @@ import MomDad from './pages/Family/MomDad';
 import MyersBriggs from './pages/MyersBriggs';
 import LoveLanguages from './pages/LoveLanguages';
 import LifeTimers from './pages/LifeTimers';
+import ScopesAndClaims from './pages/TechDocs/ScopesAndClaims';
+import BookList from './pages/BookList';
 
 function App() {
   return (
@@ -30,6 +32,10 @@ function App() {
           <Route path="love-languages" element={<LoveLanguages />} />
           <Route path="life-timers" element={<LifeTimers />} />
           
+          {/* Technical Docs Routes */}
+          <Route path="tech-docs/scopes-and-claims" element={<ScopesAndClaims />} />
+          <Route path="booklist" element={<BookList />} />
+
           {/* Developer Routes */}
           <Route path="developer" element={<Developer />} />
           <Route path="developer/interview-questions" element={<InterviewQuestions />} />

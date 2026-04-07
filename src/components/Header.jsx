@@ -1,41 +1,24 @@
-import { Link } from 'react-router-dom';
-
-const Header = () => {
-  // Get current day of the week (0 = Sunday, 1 = Monday, ..., 6 = Saturday)
-  const dayOfWeek = new Date().getDay();
-  
-  // Define gradients for each day
-  const gradients = {
-    0: 'bg-gradient-to-r from-orange-500 via-orange-600 to-amber-600', // Sunday - orange
-    1: 'bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600', // Monday - current/default
-    2: 'bg-gradient-to-r from-red-500 via-rose-600 to-red-700',        // Tuesday - reddish
-    3: 'bg-gradient-to-r from-teal-500 via-cyan-600 to-teal-700',      // Wednesday - teal
-    4: 'bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-700',    // Thursday - blue
-    5: 'bg-gradient-to-r from-green-500 via-emerald-600 to-green-700', // Friday - green
-    6: 'bg-gradient-to-r from-pink-500 via-pink-600 to-rose-600'       // Saturday - pink
-  };
-  
-  const gradientClass = gradients[dayOfWeek];
-  
+const Header = ({ onMenuToggle }) => {
   return (
-    <header className={`${gradientClass} text-white shadow-xl`}>
-      <nav className="container mx-auto px-6 py-5">
-        <div className="flex flex-wrap justify-between items-center">
-          <Link to="/" className="text-3xl font-extrabold hover:scale-105 transform transition-all duration-300 tracking-tight">
+    <header className="bg-slate-900 text-white border-b border-slate-700 flex-shrink-0">
+      <div className="px-6 py-4 flex items-center gap-4">
+        {/* Mobile hamburger */}
+        <button
+          onClick={onMenuToggle}
+          className="lg:hidden p-1 rounded text-slate-400 hover:text-white transition-colors"
+          aria-label="Open navigation"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <div className="flex items-center gap-3">
+          <div className="w-1 h-6 rounded-full bg-blue-500" />
+          <h1 className="text-lg font-semibold tracking-wide text-white">
             Michael Wolfgang
-          </Link>
-          <ul className="flex flex-wrap gap-8 font-medium">
-            <li><Link to="/" className="hover:text-yellow-300 transition-colors duration-200 border-b-2 border-transparent hover:border-yellow-300 pb-1">Home</Link></li>
-            <li><Link to="/developer" className="hover:text-yellow-300 transition-colors duration-200 border-b-2 border-transparent hover:border-yellow-300 pb-1">Developer</Link></li>
-            <li><Link to="/about" className="hover:text-yellow-300 transition-colors duration-200 border-b-2 border-transparent hover:border-yellow-300 pb-1">About</Link></li>
-            <li><Link to="/myers-briggs" className="hover:text-yellow-300 transition-colors duration-200 border-b-2 border-transparent hover:border-yellow-300 pb-1">Personality</Link></li>
-            <li><Link to="/love-languages" className="hover:text-yellow-300 transition-colors duration-200 border-b-2 border-transparent hover:border-yellow-300 pb-1">Love Languages</Link></li>
-            <li><Link to="/life-timers" className="hover:text-yellow-300 transition-colors duration-200 border-b-2 border-transparent hover:border-yellow-300 pb-1">Life Timers</Link></li>
-            <li><Link to="/contact" className="hover:text-yellow-300 transition-colors duration-200 border-b-2 border-transparent hover:border-yellow-300 pb-1">Contact</Link></li>
-            <li><Link to="/links" className="hover:text-yellow-300 transition-colors duration-200 border-b-2 border-transparent hover:border-yellow-300 pb-1">Links</Link></li>
-          </ul>
+          </h1>
         </div>
-      </nav>
+      </div>
     </header>
   );
 };
