@@ -15,13 +15,13 @@ const Podcasts = () => {
   return (
     <div className="space-y-8">
       <div className="text-center mb-8">
-        <h1 className="text-5xl font-extrabold bg-gradient-to-r from-orange-600 via-pink-600 to-red-600 bg-clip-text text-transparent mb-4">Favorite Podcasts</h1>
-        <p className="text-gray-600 text-lg">Tech podcasts I listen to during my commute and runs</p>
+        <h1 className="text-4xl font-bold text-slate-800 mb-4">Favorite Podcasts</h1>
+        <p className="text-slate-500 text-lg">Tech podcasts I listen to during my commute and runs</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {podcasts.map((podcast, index) => (
-          <div key={index} className="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 group">
+          <div key={index} className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow duration-200 border border-slate-200 group">
             <div className="mb-4 overflow-hidden rounded-xl">
               <img 
                 src={podcast.image} 
@@ -32,8 +32,8 @@ const Podcasts = () => {
                 }}
               />
             </div>
-            <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 mb-2">{podcast.name}</h3>
-            <p className="text-gray-600">{podcast.description}</p>
+            <h3 className="text-xl font-bold text-slate-800 mb-2">{podcast.name}</h3>
+            <p className="text-slate-600">{podcast.description}</p>
           </div>
         ))}
       </div>

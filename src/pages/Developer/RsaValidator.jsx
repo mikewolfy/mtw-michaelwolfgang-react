@@ -126,18 +126,18 @@ Example public key - replace with your own
   return (
     <div className="space-y-8">
       <div className="text-center mb-8">
-        <h1 className="text-5xl font-extrabold bg-gradient-to-r from-green-600 via-teal-600 to-blue-600 bg-clip-text text-transparent mb-4">
+        <h1 className="text-4xl font-bold text-slate-800 mb-4">
           RSA Signature Validator
         </h1>
-        <p className="text-gray-600 text-lg">
+        <p className="text-slate-500 text-lg">
           Verify RSA-signed strings using a public key
         </p>
       </div>
 
-      <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+      <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200">
         {/* Algorithm Selection */}
         <div className="mb-6">
-          <label htmlFor="algorithm" className="block text-lg font-semibold text-gray-700 mb-2">
+          <label htmlFor="algorithm" className="block text-lg font-semibold text-slate-700 mb-2">
             Hash Algorithm:
           </label>
           <select
@@ -155,7 +155,7 @@ Example public key - replace with your own
 
         {/* Original Data */}
         <div className="mb-6">
-          <label htmlFor="original-data" className="block text-lg font-semibold text-gray-700 mb-2">
+          <label htmlFor="original-data" className="block text-lg font-semibold text-slate-700 mb-2">
             Original Data:
           </label>
           <textarea
@@ -169,7 +169,7 @@ Example public key - replace with your own
 
         {/* Signature */}
         <div className="mb-6">
-          <label htmlFor="signature" className="block text-lg font-semibold text-gray-700 mb-2">
+          <label htmlFor="signature" className="block text-lg font-semibold text-slate-700 mb-2">
             Signature (Base64):
           </label>
           <textarea
@@ -183,7 +183,7 @@ Example public key - replace with your own
 
         {/* Public Key */}
         <div className="mb-6">
-          <label htmlFor="public-key" className="block text-lg font-semibold text-gray-700 mb-2">
+          <label htmlFor="public-key" className="block text-lg font-semibold text-slate-700 mb-2">
             Public Key (PEM format):
           </label>
           <textarea
@@ -257,16 +257,16 @@ Example public key - replace with your own
       </div>
 
       {/* Information Section */}
-      <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">About RSA Signature Verification</h2>
-        <div className="space-y-3 text-gray-600">
+      <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200">
+        <h2 className="text-2xl font-bold text-slate-800 mb-4">About RSA Signature Verification</h2>
+        <div className="space-y-3 text-slate-600">
           <p>
             RSA signature verification is a cryptographic process that confirms the authenticity and integrity 
             of a message using asymmetric cryptography.
           </p>
           
           <div className="mt-4">
-            <h3 className="font-semibold text-gray-700 mb-2">How it works:</h3>
+            <h3 className="font-semibold text-slate-700 mb-2">How it works:</h3>
             <ul className="list-disc list-inside ml-4 space-y-1">
               <li><strong>Signing:</strong> The sender uses their private key to create a digital signature of the data</li>
               <li><strong>Verification:</strong> Anyone can use the sender's public key to verify the signature</li>
@@ -275,7 +275,7 @@ Example public key - replace with your own
           </div>
 
           <div className="mt-4">
-            <h3 className="font-semibold text-gray-700 mb-2">Input Requirements:</h3>
+            <h3 className="font-semibold text-slate-700 mb-2">Input Requirements:</h3>
             <ul className="list-disc list-inside ml-4 space-y-1">
               <li><strong>Original Data:</strong> The exact message that was signed (must match exactly)</li>
               <li><strong>Signature:</strong> Base64 encoded signature string</li>
@@ -284,7 +284,7 @@ Example public key - replace with your own
           </div>
 
           <div className="mt-4">
-            <h3 className="font-semibold text-gray-700 mb-2">Common Use Cases:</h3>
+            <h3 className="font-semibold text-slate-700 mb-2">Common Use Cases:</h3>
             <ul className="list-disc list-inside ml-4 space-y-1">
               <li>Verifying API responses and webhooks</li>
               <li>Authenticating software updates and downloads</li>
@@ -306,9 +306,9 @@ Example public key - replace with your own
       </div>
 
       {/* Example Section */}
-      <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">Example Public Key Format</h2>
-        <pre className="bg-gray-50 p-4 rounded-lg overflow-x-auto text-sm border border-gray-200 font-mono">
+      <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200">
+        <h2 className="text-2xl font-bold text-slate-800 mb-4">Example Public Key Format</h2>
+        <pre className="bg-slate-50 p-4 rounded-lg overflow-x-auto text-sm border border-slate-200 font-mono">
 {`-----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAu1SU1LfVLPHCozMxH2Mo
 4lgOEePzNm0tRgeLezV6ffAt0gunVTLw7onLRnrq0/IzW7yWR7QkrmBL7jTKEn5u

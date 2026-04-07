@@ -129,11 +129,11 @@ const getTotalTimers = (targetDate, now) => {
 };
 
 const TimerCard = ({ title, items }) => (
-  <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100">
-    <h2 className="text-2xl font-bold mb-4 text-gray-800">{title}</h2>
+  <div className="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
+    <h2 className="text-2xl font-bold mb-4 text-slate-800">{title}</h2>
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-base md:text-xl">
       {items.map((item) => (
-        <div key={item.label} className="bg-gray-50 rounded-lg p-4">
+        <div key={item.label} className="bg-slate-50 rounded-lg p-4">
           <span className="font-semibold">{item.label}:</span>{' '}
           <span className="text-lg md:text-2xl font-bold">{item.value.toLocaleString()}</span>
         </div>
@@ -246,23 +246,23 @@ const LifeTimers = () => {
 
   return (
     <div className="space-y-8">
-      <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
-        <h1 className="text-4xl font-extrabold mb-6 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+      <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200">
+        <h1 className="text-4xl font-bold mb-6 text-slate-800">
           Life Timers
         </h1>
 
         <div className="grid md:grid-cols-2 gap-4">
-          <label className="flex flex-col gap-2 text-gray-700 font-semibold text-lg">
+          <label className="flex flex-col gap-2 text-slate-700 font-semibold text-lg">
             Date of Birth
             <input
               type="date"
               value={dob}
               onChange={(event) => setDob(event.target.value)}
-              className="border border-gray-300 rounded-lg px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="border border-slate-300 rounded-lg px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </label>
 
-          <label className="flex flex-col gap-2 text-gray-700 font-semibold text-lg">
+          <label className="flex flex-col gap-2 text-slate-700 font-semibold text-lg">
             Retirement Age
             <input
               type="number"
@@ -270,15 +270,15 @@ const LifeTimers = () => {
               max="120"
               value={retirementAge}
               onChange={(event) => setRetirementAge(event.target.value)}
-              className="border border-gray-300 rounded-lg px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="border border-slate-300 rounded-lg px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </label>
         </div>
 
-        <p className="text-sm text-gray-500 mt-4">
+        <p className="text-sm text-slate-500 mt-4">
           Your values are saved in browser cookies for about 20 years so they persist between visits.
         </p>
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-slate-500">
           End-of-life timer uses an assumed life expectancy of {ASSUMED_END_OF_LIFE_AGE} years.
         </p>
       </div>
@@ -309,7 +309,7 @@ const LifeTimers = () => {
           ]}
         />
       ) : (
-        <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100 text-gray-600">
+        <div className="bg-white rounded-xl shadow-sm p-6 border border-slate-200 text-slate-600">
           Enter a valid DOB and retirement age to see retirement timers.
         </div>
       )}
@@ -327,7 +327,7 @@ const LifeTimers = () => {
           ]}
         />
       ) : (
-        <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100 text-gray-600">
+        <div className="bg-white rounded-xl shadow-sm p-6 border border-slate-200 text-slate-600">
           Enter a valid DOB to see end-of-life timers.
         </div>
       )}

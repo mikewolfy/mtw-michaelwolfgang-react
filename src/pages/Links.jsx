@@ -2,13 +2,13 @@ const Links = () => {
   return (
     <div className="space-y-8">
       <div className="text-center mb-8">
-        <h1 className="text-5xl font-extrabold bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent mb-4">Useful Links</h1>
-        <p className="text-gray-600 text-lg">Quick access to my professional profiles and projects</p>
+        <h1 className="text-4xl font-bold text-slate-800 mb-4">Useful Links</h1>
+        <p className="text-slate-500 text-lg">Quick access to my professional profiles and projects</p>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
-          <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-6">Professional</h2>
+        <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200 hover:shadow-md transition-shadow duration-200">
+          <h2 className="text-2xl font-bold text-slate-800 border-l-4 border-blue-600 pl-3 mb-6">Professional</h2>
           <ul className="space-y-2">
             <li>
               <a 
@@ -43,8 +43,8 @@ const Links = () => {
           </ul>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
-          <h2 className="text-3xl font-bold bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent mb-6">Personal Projects</h2>
+        <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200 hover:shadow-md transition-shadow duration-200">
+          <h2 className="text-2xl font-bold text-slate-800 border-l-4 border-blue-600 pl-3 mb-6">Personal Projects</h2>
           <ul className="space-y-2">
             <li>
               <a 
