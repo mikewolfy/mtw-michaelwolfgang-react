@@ -23,6 +23,7 @@ const navSections = [
     title: 'Technical Docs',
     items: [
       { to: '/tech-docs/scopes-and-claims', label: 'Scopes & Claims' },
+      { to: '/tech-docs/ciam-resources', label: 'CIAM Resources' },
     ],
   },
   {

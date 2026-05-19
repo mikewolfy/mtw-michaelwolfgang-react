@@ -38,6 +38,10 @@ const Home = () => {
                 <Link to="/developer/resources" className="text-blue-600 hover:text-blue-800 hover:underline">Resources</Link>
               </div>
               <div>
+                Technical docs and CIAM learning references:{' '}
+                <Link to="/tech-docs/ciam-resources" className="text-blue-600 hover:text-blue-800 hover:underline">CIAM Resources</Link>
+              </div>
+              <div>
                 I enjoy keeping current with podcasts and videos:{' '}
                 <Link to="/developer/podcasts" className="text-blue-600 hover:text-blue-800 hover:underline">Favorites</Link>
               </div>
