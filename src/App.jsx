@@ -17,6 +17,7 @@ import MyersBriggs from './pages/MyersBriggs';
 import LoveLanguages from './pages/LoveLanguages';
 import LifeTimers from './pages/LifeTimers';
 import ScopesAndClaims from './pages/TechDocs/ScopesAndClaims';
+import CiamResources from './pages/TechDocs/CiamResources';
 import BookList from './pages/BookList';
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           
           {/* Technical Docs Routes */}
           <Route path="tech-docs/scopes-and-claims" element={<ScopesAndClaims />} />
+          <Route path="tech-docs/ciam-resources" element={<CiamResources />} />
           <Route path="booklist" element={<BookList />} />
 
           {/* Developer Routes */}

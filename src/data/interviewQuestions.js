@@ -61,12 +61,32 @@ export const getAzureQuestions = () => {
 export const getProblemSolvingQuestions = () => {
   return [
     {
-      question: "What does the term microservice mean to you?",
-      answer: "Clear set of well defined responsibilities, owned by single team, deployable on its own."
+      question: "How would you define and drive a CIAM target architecture across a large enterprise with multiple product teams and legacy identity stacks?",
+      answer: "Start with business outcomes and risk posture, then define a reference architecture and capability roadmap. Use architecture decision records, platform standards, and phased migration patterns that let teams deliver incrementally while converging on shared CIAM services."
     },
     {
-      question: "What does DevOps mean to you?",
-      answer: "The combination of people, tools, and process to quickly deliver value to customers."
+      question: "Describe a time you had to build consensus across security, product, and engineering teams that had conflicting CIAM priorities.",
+      answer: "I align stakeholders on measurable outcomes first, such as fraud reduction, conversion, and compliance timelines. Then I facilitate trade-off decisions with transparent options, documented risks, and clear ownership so disagreement turns into an executable plan."
+    },
+    {
+      question: "How do you balance customer experience and security in CIAM, especially around MFA, step-up authentication, and account recovery?",
+      answer: "I use risk-based authentication and journey-level telemetry to apply stronger controls only when needed. The goal is to reduce friction for low-risk users while protecting high-risk events with adaptive controls and resilient recovery mechanisms."
+    },
+    {
+      question: "What is your approach to delivering value through other teams rather than building everything directly yourself?",
+      answer: "I treat CIAM as a platform product: publish standards, reference implementations, and reusable integration patterns. I focus on enablement, governance, and KPIs so product teams can move faster with consistency instead of waiting on a central team bottleneck."
+    },
+    {
+      question: "How would you modernize identity in an organization where multiple business units own different customer directories and login experiences?",
+      answer: "I begin with identity domain mapping and data governance, then establish federation and profile-linking strategies before full consolidation. I prioritize high-impact journeys first and use coexistence patterns to reduce migration risk while improving customer continuity."
+    },
+    {
+      question: "How do you measure whether a CIAM transformation is succeeding at enterprise scale?",
+      answer: "I track a balanced scorecard: authentication success rate, latency, account takeover incidents, onboarding time for teams, and release frequency. Success means better security and reliability while business teams ship faster and customer conversion improves."
+    },
+    {
+      question: "When performance or reliability issues appear in identity flows, how do you lead the response across multiple teams?",
+      answer: "I establish shared incident command, define clear service ownership boundaries, and drive root-cause analysis across identity, app, and infrastructure layers. Then I convert lessons learned into architectural guardrails, SLOs, and automated regression checks."
     }
   ];
 };
