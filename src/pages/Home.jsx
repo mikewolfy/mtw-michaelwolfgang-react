@@ -131,7 +131,7 @@ const Home = () => {
               <li>Run a 3:12 marathon to qualify for the Boston marathon (then run the Boston Marathon).</li>
               <li>Run plenty of 5Ks while pushing my kids in their stroller.</li>
               <li>Run a marathon to the top of Pikes Peak during a thunder storm.</li>
-              <li>Run in the top 100 finishers of the local 42,000+ Ukrops Monument 10K</li>
+              <li>Run in the top 100 finishers of the local 27,000+ Ukrops Monument 10K</li>
             </ul>
             <div className="text-slate-600">
               Check out all of my races on{' '}
