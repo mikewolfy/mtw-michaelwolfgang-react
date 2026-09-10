@@ -45,6 +45,7 @@ const navSections = [
   {
     items: [
       { to: '/booklist', label: 'Book List' },
+      { to: '/quotes', label: 'Quotes' },
       { to: '/contact', label: 'Contact' },
       { to: '/links', label: 'Links' },
     ],
