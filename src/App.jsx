@@ -19,6 +19,7 @@ import LifeTimers from './pages/LifeTimers';
 import ScopesAndClaims from './pages/TechDocs/ScopesAndClaims';
 import CiamResources from './pages/TechDocs/CiamResources';
 import BookList from './pages/BookList';
+import Quotes from './pages/Quotes';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path="tech-docs/scopes-and-claims" element={<ScopesAndClaims />} />
           <Route path="tech-docs/ciam-resources" element={<CiamResources />} />
           <Route path="booklist" element={<BookList />} />
+          <Route path="quotes" element={<Quotes />} />
 
           {/* Developer Routes */}
           <Route path="developer" element={<Developer />} />
