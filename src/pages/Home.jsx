@@ -7,13 +7,10 @@ const Home = () => {
       <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200 hover:shadow-lg transition-shadow duration-200">
         <div className="flex flex-col md:flex-row gap-6 items-start">
           <div className="md:w-1/3">
-            <img 
-              src="/images/clouds.jpeg" 
-              alt="Michael Wolfgang" 
-              className="w-full h-auto rounded-lg"
-              onError={(e) => {
-                e.target.src = 'https://via.placeholder.com/275x275?text=Michael+Wolfgang';
-              }}
+            <img
+              src="/images/dev-architecture.svg"
+              alt="Software architecture illustration"
+              className="w-full h-auto rounded-lg bg-blue-50"
             />
           </div>
           <div className="md:w-2/3">
@@ -65,13 +62,10 @@ const Home = () => {
       <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200 hover:shadow-lg transition-shadow duration-200">
         <div className="flex flex-col md:flex-row gap-6 items-start">
           <div className="md:w-1/3">
-            <img 
-              src="/images/coins_investing.png" 
-              alt="Investing" 
-              className="w-full h-auto rounded-lg"
-              onError={(e) => {
-                e.target.src = 'https://via.placeholder.com/275x275?text=Investing';
-              }}
+            <img
+              src="/images/finance-growth.svg"
+              alt="Personal finance growth illustration"
+              className="w-full h-auto rounded-lg bg-blue-50"
             />
           </div>
           <div className="md:w-2/3">
@@ -109,13 +103,10 @@ const Home = () => {
       <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200 hover:shadow-lg transition-shadow duration-200">
         <div className="flex flex-col md:flex-row gap-6 items-start">
           <div className="md:w-1/3">
-            <img 
-              src="/images/running_silhouette.png" 
-              alt="Running" 
-              className="w-full h-auto rounded-lg"
-              onError={(e) => {
-                e.target.src = 'https://via.placeholder.com/275x275?text=Runner';
-              }}
+            <img
+              src="/images/runner-icon.svg"
+              alt="Runner illustration"
+              className="w-full h-auto rounded-lg bg-blue-50"
             />
           </div>
           <div className="md:w-2/3">
@@ -152,13 +143,10 @@ const Home = () => {
       <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200 hover:shadow-lg transition-shadow duration-200">
         <div className="flex flex-col md:flex-row gap-6 items-start">
           <div className="md:w-1/3">
-            <img 
-              src="/images/knowledge.jpg" 
-              alt="Learning" 
-              className="w-full h-auto rounded-lg"
-              onError={(e) => {
-                e.target.src = 'https://via.placeholder.com/275x275?text=Learning';
-              }}
+            <img
+              src="/images/learning-icon.svg"
+              alt="Continuous learning illustration"
+              className="w-full h-auto rounded-lg bg-blue-50"
             />
           </div>
           <div className="md:w-2/3">
@@ -188,12 +176,9 @@ const Home = () => {
         <div className="flex flex-col md:flex-row gap-6 items-start">
           <div className="md:w-1/3">
             <img
-              src="/images/tae-kwon-do.jpg"
-              alt="Tae Kwon Do"
-              className="w-full h-auto rounded-lg"
-              onError={(e) => {
-                e.target.src = 'https://via.placeholder.com/275x275?text=Tae+Kwon+Do';
-              }}
+              src="/images/tae-kwon-do-belt.svg"
+              alt="Tae Kwon Do belt illustration"
+              className="w-full h-auto rounded-lg bg-blue-50"
             />
           </div>
           <div className="md:w-2/3">
