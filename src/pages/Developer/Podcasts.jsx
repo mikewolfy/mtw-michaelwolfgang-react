@@ -21,12 +21,12 @@ const Podcasts = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {podcasts.map((podcast, index) => (
-          <div key={index} className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow duration-200 border border-slate-200 group">
-            <div className="mb-4 overflow-hidden rounded-xl">
+          <div key={index} className="bg-white rounded-2xl shadow-sm p-6 hover:shadow-lg transition-shadow duration-200 border border-slate-200 group">
+            <div className="mb-4 overflow-hidden rounded-2xl">
               <img 
                 src={podcast.image} 
                 alt={podcast.name}
-                className="w-full h-48 object-cover rounded-xl group-hover:scale-110 transition-transform duration-300"
+                className="w-full h-48 object-cover rounded-2xl group-hover:scale-110 transition-transform duration-300"
                 onError={(e) => {
                   e.target.src = 'https://via.placeholder.com/200x200?text=' + encodeURIComponent(podcast.name);
                 }}

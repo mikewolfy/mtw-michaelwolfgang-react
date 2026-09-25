@@ -134,7 +134,7 @@ Example public key - replace with your own
         </p>
       </div>
 
-      <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200">
+      <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200">
         {/* Algorithm Selection */}
         <div className="mb-6">
           <label htmlFor="algorithm" className="block text-lg font-semibold text-slate-700 mb-2">
@@ -257,7 +257,7 @@ Example public key - replace with your own
       </div>
 
       {/* Information Section */}
-      <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200">
+      <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200">
         <h2 className="text-2xl font-bold text-slate-800 mb-4">About RSA Signature Verification</h2>
         <div className="space-y-3 text-slate-600">
           <p>
@@ -306,7 +306,7 @@ Example public key - replace with your own
       </div>
 
       {/* Example Section */}
-      <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200">
+      <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200">
         <h2 className="text-2xl font-bold text-slate-800 mb-4">Example Public Key Format</h2>
         <pre className="bg-slate-50 p-4 rounded-lg overflow-x-auto text-sm border border-slate-200 font-mono">
 {`-----BEGIN PUBLIC KEY-----

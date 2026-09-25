@@ -6,7 +6,7 @@ const About = () => {
         <p className="text-slate-500 text-lg">Software Engineer, Runner, Investor, and Lifelong Learner</p>
       </div>
       
-      <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200">
+      <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200">
         <h2 className="text-2xl font-bold text-slate-800 border-l-4 border-blue-600 pl-3 mb-6">Michael Wolfgang</h2>
         <div className="space-y-4 text-slate-700">
           <p>
@@ -26,7 +26,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200">
+      <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200">
         <h2 className="text-2xl font-bold text-slate-800 border-l-4 border-blue-600 pl-3 mb-6">Tae Kwon Do, as a Family</h2>
         <div className="space-y-4 text-slate-700">
           <p>

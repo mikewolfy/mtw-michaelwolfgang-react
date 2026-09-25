@@ -8,7 +8,7 @@ const CiamResources = () => {
         </p>
       </div>
 
-      <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200 hover:shadow-md transition-shadow duration-200">
+      <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200 hover:shadow-lg transition-shadow duration-200">
         <h2 className="text-2xl font-bold text-slate-800 border-l-4 border-blue-600 pl-3 mb-6">Blogs and Industry Updates</h2>
         <ul className="space-y-3 text-slate-700">
           <li>
@@ -58,7 +58,7 @@ const CiamResources = () => {
         </ul>
       </div>
 
-      <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200 hover:shadow-md transition-shadow duration-200">
+      <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200 hover:shadow-lg transition-shadow duration-200">
         <h2 className="text-2xl font-bold text-slate-800 border-l-4 border-blue-600 pl-3 mb-6">Practitioner Communities and Standards</h2>
         <ul className="space-y-3 text-slate-700">
           <li>
@@ -108,7 +108,7 @@ const CiamResources = () => {
         </ul>
       </div>
 
-      <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200 hover:shadow-md transition-shadow duration-200">
+      <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200 hover:shadow-lg transition-shadow duration-200">
         <h2 className="text-2xl font-bold text-slate-800 border-l-4 border-blue-600 pl-3 mb-6">Training and Skill Development</h2>
         <ul className="space-y-3 text-slate-700">
           <li>

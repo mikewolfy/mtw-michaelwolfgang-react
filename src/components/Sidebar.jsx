@@ -27,14 +27,6 @@ const navSections = [
     ],
   },
   {
-    title: 'Family',
-    items: [
-      { to: '/reed', label: 'Reed' },
-      { to: '/emma', label: 'Emma' },
-      { to: '/mom-dad', label: 'Mom & Dad' },
-    ],
-  },
-  {
     title: 'Quizzes & Timers',
     items: [
       { to: '/myers-briggs', label: 'Myers-Briggs Personality' },
@@ -73,7 +65,7 @@ const CollapsibleSection = ({ title, items, onNavigate }) => {
                 end={item.end}
                 onClick={onNavigate}
                 className={({ isActive }) =>
-                  `block px-6 py-2 text-sm transition-colors duration-150 rounded mx-2 ${
+                  `block px-6 py-2 text-sm transition-colors duration-150 rounded-lg mx-2 ${
                     isActive
                       ? 'bg-blue-600 text-white font-medium'
                       : 'text-slate-400 hover:bg-slate-800 hover:text-slate-100'
@@ -112,7 +104,7 @@ const Sidebar = ({ isOpen, onClose }) => {
         `}
       >
         {/* Sidebar header */}
-        <div className="flex items-center justify-between px-4 py-5 border-b border-slate-700 flex-shrink-0">
+        <div className="flex items-center justify-between px-4 py-5 border-b border-slate-800 flex-shrink-0">
           <NavLink
             to="/"
             onClick={onClose}
@@ -148,7 +140,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                       end={item.end}
                       onClick={onClose}
                       className={({ isActive }) =>
-                        `block px-4 py-2 text-sm transition-colors duration-150 rounded mx-2 ${
+                        `block px-4 py-2 text-sm transition-colors duration-150 rounded-lg mx-2 ${
                           isActive
                             ? 'bg-blue-600 text-white font-medium'
                             : 'text-slate-400 hover:bg-slate-800 hover:text-slate-100'

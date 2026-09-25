@@ -34,7 +34,7 @@ const InterviewQuestions = () => {
       </div>
 
       {/* Category Selector */}
-      <div className="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
+      <div className="bg-white rounded-2xl shadow-sm p-6 border border-slate-200">
         <label htmlFor="category" className="block text-sm font-bold text-slate-700 mb-3">
           Select Category:
         </label>
@@ -53,7 +53,7 @@ const InterviewQuestions = () => {
       {/* Questions List */}
       <div className="space-y-6">
         {questions.map((q, index) => (
-          <div key={index} className="bg-white rounded-xl shadow-sm p-8 border border-slate-200 hover:shadow-md transition-shadow duration-200">
+          <div key={index} className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200 hover:shadow-lg transition-shadow duration-200">
             <h3 className="text-2xl font-bold text-slate-800 mb-4 flex items-start">
               <span className="inline-block bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0 text-sm">
                 {index + 1}

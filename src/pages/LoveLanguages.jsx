@@ -174,9 +174,9 @@ const LoveLanguages = () => {
           <p className="text-slate-500 text-lg">Welcome back!</p>
         </div>
 
-        <div className="bg-white rounded-xl shadow-sm p-10 border border-slate-200">
+        <div className="bg-white rounded-2xl shadow-sm p-10 border border-slate-200">
           <div className="text-center mb-8">
-            <div className="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl text-xl font-bold mb-4">
+            <div className="inline-block bg-blue-600 text-white px-6 py-3 rounded-2xl text-xl font-bold mb-4">
               Previous Result Found
             </div>
             <h2 className="text-2xl font-bold text-slate-800 mb-2">
@@ -190,7 +190,7 @@ const LoveLanguages = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <button
               onClick={loadPreviousResults}
-              className="group bg-slate-50 hover:bg-slate-100 p-8 rounded-xl border-2 border-slate-200 hover:border-blue-400 transition-all duration-200"
+              className="group bg-slate-50 hover:bg-slate-100 p-8 rounded-2xl border-2 border-slate-200 hover:border-blue-400 transition-all duration-200"
             >
               <div className="text-4xl mb-4">📊</div>
               <h3 className="text-xl font-bold text-slate-800 mb-2">View Previous Results</h3>
@@ -199,7 +199,7 @@ const LoveLanguages = () => {
 
             <button
               onClick={startNewTest}
-              className="group bg-slate-50 hover:bg-slate-100 p-8 rounded-xl border-2 border-slate-200 hover:border-blue-400 transition-all duration-200"
+              className="group bg-slate-50 hover:bg-slate-100 p-8 rounded-2xl border-2 border-slate-200 hover:border-blue-400 transition-all duration-200"
             >
               <div className="text-4xl mb-4">🔄</div>
               <h3 className="text-xl font-bold text-slate-800 mb-2">Take Test Again</h3>
@@ -230,7 +230,7 @@ const LoveLanguages = () => {
           {rankedLanguages.map((language, index) => (
             <div 
               key={language.key}
-              className="bg-white rounded-xl shadow-sm p-8 border border-slate-200 transform transition-all duration-200 hover:shadow-md"
+              className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200 transform transition-all duration-200 hover:shadow-lg"
             >
               <div className="flex items-start gap-6">
                 <div className="flex-shrink-0">
@@ -266,7 +266,7 @@ const LoveLanguages = () => {
           ))}
         </div>
 
-          <div className="bg-slate-50 rounded-xl p-8 border border-slate-200">
+          <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
           <h3 className="text-2xl font-bold text-slate-800 mb-4">About the 5 Love Languages</h3>
           <p className="text-slate-700 mb-4">
             The 5 Love Languages, developed by Dr. Gary Chapman, describes five ways people express and experience love:
@@ -283,7 +283,7 @@ const LoveLanguages = () => {
           </p>
         </div>
 
-          <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200">
+          <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200">
           <h3 className="text-2xl font-bold text-slate-800 mb-6 text-center">
               Ways to Communicate with Each Love Language
           </h3>
@@ -369,7 +369,7 @@ const LoveLanguages = () => {
         <div className="text-center">
           <button
             onClick={resetTest}
-            className="bg-blue-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-700 transition-colors duration-200"
+            className="bg-blue-600 text-white px-8 py-3 rounded-2xl font-bold hover:bg-blue-700 transition-colors duration-200"
           >
             Take Test Again
           </button>
@@ -388,7 +388,7 @@ const LoveLanguages = () => {
       </div>
 
       {/* Progress Bar */}
-      <div className="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
+      <div className="bg-white rounded-2xl shadow-sm p-6 border border-slate-200">
         <div className="flex justify-between items-center mb-3">
           <span className="text-sm font-semibold text-slate-700">
             Question {currentQuestion + 1} of {questions.length}
@@ -406,7 +406,7 @@ const LoveLanguages = () => {
       </div>
 
       {/* Question Card */}
-      <div className="bg-white rounded-xl shadow-sm p-10 border border-slate-200">
+      <div className="bg-white rounded-2xl shadow-sm p-10 border border-slate-200">
         <h2 className="text-3xl font-bold text-slate-800 mb-8 text-center">
           {currentQ.question}
         </h2>
@@ -414,7 +414,7 @@ const LoveLanguages = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <button
             onClick={(e) => handleAnswer(currentQ.typeA, e)}
-            className="group bg-slate-50 hover:bg-blue-50 p-8 rounded-xl border-2 border-slate-200 hover:border-blue-400 transition-all duration-200 focus:outline-none"
+            className="group bg-slate-50 hover:bg-blue-50 p-8 rounded-2xl border-2 border-slate-200 hover:border-blue-400 transition-all duration-200 focus:outline-none"
           >
             <div className="text-4xl font-bold text-blue-600 mb-3 group-hover:scale-110 transition-transform">A</div>
             <p className="text-lg text-slate-700 font-medium">{currentQ.optionA}</p>
@@ -422,7 +422,7 @@ const LoveLanguages = () => {
 
           <button
             onClick={(e) => handleAnswer(currentQ.typeB, e)}
-            className="group bg-slate-50 hover:bg-slate-100 p-8 rounded-xl border-2 border-slate-200 hover:border-slate-400 transition-all duration-200 focus:outline-none"
+            className="group bg-slate-50 hover:bg-slate-100 p-8 rounded-2xl border-2 border-slate-200 hover:border-slate-400 transition-all duration-200 focus:outline-none"
           >
             <div className="text-4xl font-bold text-slate-600 mb-3 group-hover:scale-110 transition-transform">B</div>
             <p className="text-lg text-slate-700 font-medium">{currentQ.optionB}</p>

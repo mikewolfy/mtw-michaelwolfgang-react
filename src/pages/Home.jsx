@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <div className="space-y-6">
       {/* Hero Section */}
-      <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200 hover:shadow-md transition-shadow duration-200">
+      <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200 hover:shadow-lg transition-shadow duration-200">
         <div className="flex flex-col md:flex-row gap-6 items-start">
           <div className="md:w-1/3">
             <img 
@@ -62,7 +62,7 @@ const Home = () => {
       </div>
 
       {/* Personal Finance Section */}
-      <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200 hover:shadow-md transition-shadow duration-200">
+      <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200 hover:shadow-lg transition-shadow duration-200">
         <div className="flex flex-col md:flex-row gap-6 items-start">
           <div className="md:w-1/3">
             <img 
@@ -106,7 +106,7 @@ const Home = () => {
       </div>
 
       {/* Runner Section */}
-      <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200 hover:shadow-md transition-shadow duration-200">
+      <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200 hover:shadow-lg transition-shadow duration-200">
         <div className="flex flex-col md:flex-row gap-6 items-start">
           <div className="md:w-1/3">
             <img 
@@ -149,7 +149,7 @@ const Home = () => {
       </div>
 
       {/* Student / Learner Section */}
-      <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200 hover:shadow-md transition-shadow duration-200">
+      <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200 hover:shadow-lg transition-shadow duration-200">
         <div className="flex flex-col md:flex-row gap-6 items-start">
           <div className="md:w-1/3">
             <img 
@@ -171,7 +171,7 @@ const Home = () => {
             </p>
             <ul className="list-disc list-inside space-y-1 text-slate-600">
               <li>
-                Here are the <Link to="/booklist" className="text-blue-600 hover:text-blue-800 hover:underline">Books</Link> that 
+                Here are the <Link to="/booklist" className="text-blue-600 hover:text-blue-800 hover:underline">Books</Link> that
                 I've been reading or listening to as audiobooks.
               </li>
               <li>
@@ -179,6 +179,35 @@ const Home = () => {
                 <Link to="/developer/podcasts" className="text-blue-600 hover:text-blue-800 hover:underline">Podcasts</Link>.
               </li>
             </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Tae Kwon Do Section */}
+      <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200 hover:shadow-lg transition-shadow duration-200">
+        <div className="flex flex-col md:flex-row gap-6 items-start">
+          <div className="md:w-1/3">
+            <img
+              src="/images/tae-kwon-do.jpg"
+              alt="Tae Kwon Do"
+              className="w-full h-auto rounded-lg"
+              onError={(e) => {
+                e.target.src = 'https://via.placeholder.com/275x275?text=Tae+Kwon+Do';
+              }}
+            />
+          </div>
+          <div className="md:w-2/3">
+            <h2 className="text-2xl font-bold mb-4 text-slate-800 border-l-4 border-blue-600 pl-3">Tae Kwon Do, as a Family</h2>
+            <p className="text-slate-600 mb-4">
+              Tae Kwon Do has been one of our family's longest-running commitments. My kids and I have
+              trained together for years, and every one of us has earned a black belt along the way.
+            </p>
+            <p className="text-slate-600">
+              Getting there wasn't quick or easy — it took years of consistent practice, showing up on
+              the hard days, and pushing through plateaus together. That shared effort is what made it
+              worthwhile: we didn't just get a belt, we built a habit of discipline and perseverance
+              as a family, and we keep training together to this day.
+            </p>
           </div>
         </div>
       </div>

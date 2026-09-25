@@ -77,7 +77,7 @@ const Quotes = () => {
         </p>
       </div>
 
-      <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-5 mb-6 flex flex-wrap gap-4">
+      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 mb-6 flex flex-wrap gap-4">
         <label className="flex flex-col text-sm text-slate-600">
           Author
           <select
@@ -127,7 +127,7 @@ const Quotes = () => {
         </span>
       </div>
 
-      <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-x-auto">
+      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-slate-200">
