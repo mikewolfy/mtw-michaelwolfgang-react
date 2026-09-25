@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPELLPRESS</title>
+<style>
+  :root{
+    --ink: #1B1F2A;
+    --panel: #242938;
+    --panel-2: #2C3244;
+    --cream: #EDE6D6;
+    --cream-shadow: #B9AF98;
+    --amber: #E8A33D;
+    --coral: #E1574C;
+    --sage: #7C9885;
+    --text: #F4F1EA;
+    --muted: #9AA0AE;
+  }
+  *{box-sizing:border-box;}
+  html,body{
+    margin:0; padding:0; height:100%;
+    background: var(--ink);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  #app{
+    min-height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 24px;
+  }
+  .screen{
+    width:100%;
+    max-width: 520px;
+  }
+  .hidden{ display:none !important; }
+
+  /* ---------- Shared type ---------- */
+  h1.brand{
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 700;
+    font-size: 2.4rem;
+    letter-spacing: 0.14em;
+    margin: 0 0 4px 0;
+    text-align:center;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.35);
+  }
+  .brand span{ color: var(--amber); }
+  .tagline{
+    text-align:center;
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin: 0 0 32px 0;
+    letter-spacing: 0.02em;
+  }
+  .best-line{
+    text-align:center;
+    color: var(--amber);
+    font-size: 0.8rem;
+    font-weight:700;
+    letter-spacing: 0.06em;
+    margin: -22px 0 24px 0;
+    min-height: 1em;
+  }
+  .new-high{
+    text-align:center;
+    color: var(--ink);
+    background: var(--amber);
+    display:block;
+    width: fit-content;
+    margin: 0 auto 14px auto;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight:700;
+    letter-spacing: 0.1em;
+    text-transform:uppercase;
+  }
+
+  /* ---------- Start screen ---------- */
+  .panel{
+    background: var(--panel);
+    border-radius: 14px;
+    padding: 28px 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  }
+  .field-label{
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 10px;
+    display:block;
+  }
+  .timer-choices{
+    display:flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .timer-chip{
+    flex: 1 1 auto;
+    min-width: 64px;
+    text-align:center;
+    padding: 10px 6px;
+    background: var(--panel-2);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    color: var(--text);
+    font-family: "Courier New", Courier, monospace;
+    font-weight:700;
+    font-size: 0.95rem;
+    cursor:pointer;
+    user-select:none;
+    transition: border-color .15s ease, background .15s ease;
+  }
+  .timer-chip:hover{ background:#333a4f; }
+  .timer-chip.active{
+    border-color: var(--amber);
+    color: var(--amber);
+  }
+  .custom-row{
+    display:flex;
+    align-items:center;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  .custom-row input[type="number"]{
+    width: 90px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 2px solid var(--panel-2);
+    background: var(--ink);
+    color: var(--text);
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1rem;
+  }
+  .custom-row span{ color: var(--muted); font-size: 0.85rem; }
+
+  .rules{
+    color: var(--muted);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 24px;
+  }
+  .rules b{ color: var(--text); }
+
+  button.primary{
+    width:100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    background: var(--amber);
+    color: #1B1F2A;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: transform .1s ease, filter .1s ease;
+  }
+  button.primary:hover{ filter: brightness(1.08); }
+  button.primary:active{ transform: scale(0.98); }
+  button.primary:disabled{
+    background: var(--panel-2);
+    color: var(--muted);
+    cursor: not-allowed;
+  }
+
+  /* ---------- Game screen ---------- */
+  .topbar{
+    display:flex;
+    justify-content: space-between;
+    align-items:flex-end;
+    margin-bottom: 18px;
+  }
+  .stat{
+    display:flex;
+    flex-direction:column;
+  }
+  .stat .num{
+    font-family:"Courier New", Courier, monospace;
+    font-weight:700;
+    font-size: 1.7rem;
+    line-height:1;
+  }
+  .stat .lbl{
+    font-size:0.68rem;
+    text-transform:uppercase;
+    letter-spacing:0.12em;
+    color: var(--muted);
+    margin-top:4px;
+  }
+  #timeNum.warn{ color: var(--coral); }
+  #scoreNum{ color: var(--amber); }
+
+  .progress-track{
+    height:8px;
+    background: var(--panel-2);
+    border-radius: 6px;
+    overflow:hidden;
+    margin-bottom: 24px;
+  }
+  .progress-fill{
+    height:100%;
+    background: var(--sage);
+    width:100%;
+    transition: width 1s linear, background .3s ease;
+  }
+  .progress-fill.warn{ background: var(--coral); }
+
+  /* tiles */
+  .tile-row{
+    display:flex;
+    justify-content:center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .tile{
+    position:relative;
+    width: 56px;
+    height: 56px;
+    background: var(--cream);
+    border-radius: 8px;
+    box-shadow: 0 4px 0 var(--cream-shadow), 0 6px 10px rgba(0,0,0,0.3);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:"Courier New", Courier, monospace;
+    font-weight:700;
+    font-size: 1.6rem;
+    color: #1B1F2A;
+    cursor:pointer;
+    user-select:none;
+    transition: transform .08s ease, opacity .15s ease, box-shadow .08s ease;
+  }
+  .tile:active{ transform: translateY(3px); box-shadow: 0 1px 0 var(--cream-shadow); }
+  .tile.active{
+    background: var(--amber);
+    box-shadow: 0 4px 0 #b57a1f, 0 6px 10px rgba(0,0,0,0.3);
+  }
+  .tile .val{
+    position:absolute;
+    bottom: 3px;
+    right: 5px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: #8b8267;
+  }
+  .tile .use-count{
+    position:absolute;
+    top: -6px;
+    left: -6px;
+    background: var(--coral);
+    color: #fff;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size: 0.62rem;
+    font-weight: 700;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  }
+
+  .stage-label{
+    text-align:center;
+    color: var(--muted);
+    font-size: 0.72rem;
+    text-transform:uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+  }
+  .stage-row{
+    display:flex;
+    justify-content:center;
+    gap: 8px;
+    margin-bottom: 10px;
+    min-height: 44px;
+  }
+  .stage-slot{
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+    border: 2px dashed var(--panel-2);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:"Courier New", Courier, monospace;
+    font-weight:700;
+    font-size:1.2rem;
+    color: var(--text);
+    cursor:pointer;
+  }
+  .stage-slot.filled{
+    border-style: solid;
+    border-color: var(--amber);
+    background: rgba(232,163,61,0.12);
+  }
+
+  .action-row{
+    display:flex;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+  .action-row button{
+    flex:1;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-weight:700;
+    letter-spacing:0.04em;
+    cursor:pointer;
+    text-transform:uppercase;
+    font-size: 0.85rem;
+  }
+  #clearBtn{ background: var(--panel-2); color: var(--text); }
+  #submitBtn{ background: var(--sage); color: #10241a; }
+  #submitBtn:disabled{ background: var(--panel-2); color: var(--muted); cursor:not-allowed; }
+
+  .feedback{
+    text-align:center;
+    min-height: 22px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin: 10px 0 20px 0;
+    letter-spacing: 0.02em;
+  }
+  .feedback.ok{ color: var(--sage); }
+  .feedback.bad{ color: var(--coral); }
+  .feedback.bonus{ color: var(--amber); }
+
+  /* found words */
+  .found-title{
+    font-size: 0.72rem;
+    text-transform:uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin: 22px 0 10px 0;
+    text-align:center;
+  }
+  .found-grid{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+  .found-cell{
+    background: var(--panel-2);
+    border-radius: 8px;
+    padding: 10px 4px;
+    text-align:center;
+  }
+  .found-cell.empty{ opacity: 0.35; }
+  .found-cell .word{
+    font-family:"Courier New", Courier, monospace;
+    font-weight:700;
+    font-size: 0.95rem;
+    letter-spacing: 0.06em;
+  }
+  .found-cell .pts{
+    font-size: 0.68rem;
+    color: var(--amber);
+    margin-top: 3px;
+  }
+
+  /* ---------- End screen ---------- */
+  .end-title{
+    text-align:center;
+    font-family:"Courier New", Courier, monospace;
+    font-weight:700;
+    font-size: 1.6rem;
+    letter-spacing: 0.1em;
+    color: var(--coral);
+    margin-bottom: 6px;
+  }
+  .final-score{
+    text-align:center;
+    font-family:"Courier New", Courier, monospace;
+    font-weight:700;
+    font-size: 3.2rem;
+    color: var(--amber);
+    margin: 6px 0 22px 0;
+  }
+  .end-stats{
+    display:flex;
+    justify-content:space-around;
+    margin-bottom: 26px;
+  }
+  .end-stats .stat .num{ font-size:1.3rem; }
+</style>
+</head>
+<body>
+<div id="app">
+
+  <!-- START SCREEN -->
+  <div class="screen" id="startScreen">
+    <h1 class="brand">SPELL<span>PRESS</span></h1>
+    <p class="tagline">six letters. four words. beat the clock.</p>
+    <p class="best-line" id="bestLine"></p>
+    <div class="panel">
+      <span class="field-label">Round timer</span>
+      <div class="timer-choices" id="timerChoices">
+        <div class="timer-chip" data-secs="60">1:00</div>
+        <div class="timer-chip active" data-secs="120">2:00</div>
+        <div class="timer-chip" data-secs="180">3:00</div>
+        <div class="timer-chip" data-secs="300">5:00</div>
+      </div>
+      <div class="custom-row">
+        <input type="number" id="customSecs" min="10" max="1800" placeholder="custom">
+        <span>seconds &mdash; leave blank to use a preset above</span>
+      </div>
+      <p class="rules">
+        You'll get <b>6 letters</b> (always a mix of vowels &amp; consonants). Tap tiles to build <b>4-letter words</b>. Each valid word scores points based on its letters; complete <b>4 words</b> from one set to earn a bonus and get a fresh set of letters. Score as much as you can before time runs out.
+      </p>
+      <button class="primary" id="startBtn">Start round</button>
+    </div>
+  </div>
+
+  <!-- GAME SCREEN -->
+  <div class="screen hidden" id="gameScreen">
+    <div class="topbar">
+      <div class="stat">
+        <div class="num" id="timeNum">2:00</div>
+        <div class="lbl">time left</div>
+      </div>
+      <div class="stat" style="align-items:flex-end;">
+        <div class="num" id="scoreNum">0</div>
+        <div class="lbl">score</div>
+      </div>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+    <div class="tile-row" id="tileRow"></div>
+
+    <div class="stage-label">your word</div>
+    <div class="stage-row" id="stageRow"></div>
+
+    <div class="action-row">
+      <button id="clearBtn">Clear</button>
+      <button id="submitBtn" disabled>Submit</button>
+    </div>
+    <div class="feedback" id="feedback"></div>
+
+    <div class="found-title">this set &middot; <span id="foundCount">0</span>/4</div>
+    <div class="found-grid" id="foundGrid"></div>
+  </div>
+
+  <!-- END SCREEN -->
+  <div class="screen hidden" id="endScreen">
+    <div class="end-title">TIME'S UP</div>
+    <div class="final-score" id="finalScore">0</div>
+    <div class="new-high hidden" id="newHighBadge">new best!</div>
+    <p class="best-line" id="endBestLine"></p>
+    <div class="end-stats">
+      <div class="stat" style="align-items:center;">
+        <div class="num" id="endWords">0</div>
+        <div class="lbl">words spelled</div>
+      </div>
+      <div class="stat" style="align-items:center;">
+        <div class="num" id="endSets">0</div>
+        <div class="lbl">sets completed</div>
+      </div>
+      <div class="stat" style="align-items:center;">
+        <div class="num" id="endBest">-</div>
+        <div class="lbl">best word</div>
+      </div>
+    </div>
+    <button class="primary" id="playAgainBtn">Play again</button>
+  </div>
+
+</div>
+
+<script>
+(function(){
+
+  /* ---------------- Word list ---------------- */
+  var WORDLIST = (
+    "ABLE ACHE ACID ACNE ACRE ACT ACTS ADDS AFAR AGED AGES AGOG AIDE AILS AIMS AIRY AJAR ALAS ALES ALGA ALIT ALLY ALMS ALOE ALSO ALTO AMEN AMID AMMO AMPS ANEW ANTE ANTS APEX APED APES ARCH AREA ARIA ARID ARKS ARMS ARMY ARTS ASHY ASIA ASKS ATOM ATOP AUNT AURA AUTO AVID AWAY AWED AWES AXED AXES AXIS AXLE AYES " +
+    "BABE BABY BACK BADE BAGS BAIL BAIT BAKE BALD BALE BALK BALL BALM BAND BANE BANG BANK BARB BARD BARE BARK BARN BASE BASH BASK BASS BATH BATS BAWL BEAD BEAK BEAM BEAN BEAR BEAT BEDS BEEF BEEN BEEP BEER BEES BELL BELT BEND BENT BERG BEST BETA BIAS BIDE BIDS BIER BIKE BILE BILL BIND BIRD BITE BITS BLAB BLED BLIP BLOB BLOC BLOG BLOT BLOW BLUE BLUR BOAR BOAT BOBS BODE BODY BOGS BOIL BOLD BOLT BOMB BOND BONE BONY BOOK BOOM BOON BOOT BORE BORN BOSS BOTH BOUT BOWL BOWS BOXY BOYS BRAG BRAN BRAT BRAY BRED BREW BRIG BRIM BROW BUCK BUDS BUFF BUGS BULB BULK BULL BUMP BUNK BUNS BURN BURP BURY BUSH BUSY BUTT BUTS BUYS BUZZ BYTE " +
+    "CABS CAFE CAGE CAKE CALF CALL CALM CAME CAMP CANE CANS CAPE CAPS CARD CARE CARP CART CASE CASH CASK CAST CATS CAVE CELL CENT CHAP CHAT CHEF CHEW CHIC CHIN CHIP CHOP CHUG CHUM CITE CITY CLAD CLAM CLAN CLAP CLAW CLAY CLIP CLOD CLOG CLOP CLOT CLUB CLUE COAL COAT CODE COIL COIN COKE COLD COLT COMB COME CONE COOK COOL COOP COPE COPS COPY CORD CORE CORK CORN COST COSY COTE COVE COWL COZY CRAB CRAG CRAM CRAY CREW CRIB CROP CROW CRUD CRUX CUBE CUBS CUFF CULT CUPS CURB CURD CURE CURL CURT CUSP CUTE CZAR " +
+    "DABS DAME DAMP DARE DARK DART DASH DATA DATE DAWN DAYS DEAD DEAF DEAL DEAN DEAR DEBT DECK DEED DEEM DEEP DEER DEFY DELI DEMO DENS DENT DENY DESK DEWY DIAL DICE DIET DIGS DIME DINE DING DINS DIRE DIRT DISC DISH DISK DIVA DIVE DOCK DOES DOGS DOLE DOLL DOME DONE DONS DOOM DOOR DOSE DOTS DOUR DOVE DOWN DOZE DRAB DRAG DRAM DRAW DREW DRIP DROP DRUB DRUG DRUM DUAL DUCK DUCT DUDS DUEL DUET DUKE DULL DUMP DUNE DUNK DUOS DUSK DUST DUTY " +
+    "EACH EARL EARN EARS EASE EAST EASY ECHO EDDY EDGE EDIT EELS EGGS ELAN ELKS ELMS EMIT ENDS EPIC ERAS ERGO ERGS ERRS ETCH EURO EVEN EVER EVIL EWES EXAM EXES EXIT EYED EYES " +
+    "FACE FACT FADE FAIL FAIR FAKE FALL FAME FANG FANS FARE FARM FAST FATE FAWN FEAR FEAT FEED FEEL FEES FEET FELL FELT FEND FERN FEST FETE FEUD FIAT FIBS FIGS FILE FILL FILM FIND FINE FINS FIRE FIRM FISH FIST FITS FIVE FLAB FLAG FLAP FLAT FLAW FLAX FLEA FLED FLEE FLEW FLEX FLIP FLIT FLOG FLOP FLOW FLUB FLUE FLUX FOAL FOAM FOES FOGS FOIL FOLD FOLK FOND FONT FOOD FOOL FOOT FORD FORE FORK FORM FORT FOUL FOUR FOWL FOXY FRAY FREE FRET FROG FROM FUEL FULL FUME FUND FUNK FURS FURY FUSE FUSS " +
+    "GABS GAGS GAIN GALA GALE GAME GANG GAPS GASH GASP GATE GAVE GAZE GEAR GEEK GELS GEMS GENE GERM GIFT GILL GILT GIRL GIVE GLAD GLEE GLIB GLOB GLOW GLUE GNAT GNAW GOAD GOAL GOAT GOBS GODS GOES GOLD GOLF GONE GONG GOOD GOOF GOOP GORE GOSH GOWN GRAB GRAD GRAM GRAY GREW GREY GRID GRIM GRIN GRIP GRIT GROW GRUB GULF GULL GULP GUMS GUNK GUNS GUSH GUST GUTS GUYS GYMS " +
+    "HAIL HAIR HALE HALF HALL HALO HALT HAND HANG HARD HARE HARK HARM HARP HASH HAST HATE HAUL HAVE HAWK HAYS HAZE HAZY HEAD HEAL HEAP HEAR HEAT HECK HEED HEEL HEIR HELD HELL HELM HELP HERB HERD HERE HERO HERS HIDE HIGH HIKE HILL HINT HIPS HIRE HISS HIVE HOAX HOBO HOED HOES HOLD HOLE HOLY HOME HONE HONK HOOD HOOF HOOK HOOP HOOT HOPE HOPS HORN HOSE HOST HOUR HOWL HUBS HUES HUFF HUGE HUGS HULK HULL HUMP HUNK HUNT HURL HURT HUSH HYMN HYPE " +
+    "ICED ICES ICON IDEA IDLE IDOL ILLS IMPS INCH INFO INKS INTO IONS IRIS IRKS IRON ITCH ITEM " +
+    "JABS JADE JAIL JAMS JARS JAWS JAZZ JEAN JEEP JEER JELL JERK JEST JETS JIBE JIGS JIVE JOBS JOCK JOGS JOIN JOKE JOLT JOWL JOYS JUDO JUGS JULY JUMP JUNE JUNK JURY JUST JUTE " +
+    "KEEL KEEN KEEP KELP KEPT KEYS KICK KIDS KILL KILN KILO KIND KING KISS KITE KIWI KNEE KNEW KNIT KNOB KNOT KNOW " +
+    "LACE LACK LACY LADS LADY LAID LAIN LAIR LAKE LAMB LAME LAMP LAND LANE LAPS LARD LARK LASH LAST LATE LAUD LAVA LAWN LAWS LAZE LAZY LEAD LEAF LEAK LEAN LEAP LEEK LEER LEFT LEGS LEND LENS LENT LESS LEST LETS LIAR LICE LICK LIED LIEN LIES LIFE LIFT LIKE LILY LIMB LIME LIMP LINE LINK LINT LION LIPS LISP LIST LIVE LOAD LOAF LOAN LOBE LOCK LOFT LOGO LOGS LONE LONG LOOK LOOM LOON LOOP LOOT LORD LORE LOSE LOSS LOST LOTS LOUD LOVE LUCK LUGS LUMP LUNG LURE LURK LUSH LUST LUTE LYNX " +
+    "MACE MADE MAID MAIL MAIM MAIN MAKE MALE MALL MANE MANS MANY MAPS MARE MARK MARS MASH MASK MASS MAST MATE MATH MAZE MEAD MEAL MEAN MEAT MEEK MEET MELD MELT MEMO MEND MENU MERE MESH MESS MICE MICS MIDI MILD MILE MILK MILL MIME MIND MINE MINT MISS MIST MITE MOAN MOAT MOCK MODE MODS MOLD MOLE MONK MOOD MOON MOOR MOOT MOPE MOPS MORE MOSS MOST MOTH MOVE MUCH MUCK MUFF MUGS MULE MUMS MURK MUSE MUSH MUSK MUST MUTE MYTH " +
+    "NABS NAGS NAIL NAME NAPE NAPS NAVY NEAR NEAT NECK NEED NEON NERD NEST NETS NEWS NEWT NEXT NIBS NICE NICK NINE NIPS NODE NODS NONE NOON NOPE NORM NOSE NOTE NOUN NUBS NUDE NUKE NULL NUMB NUNS NUTS " +
+    "OAKS OARS OATH OATS OBEY OBOE ODDS ODOR OGLE OGRE OILY OKAY OMEN OMIT ONCE ONES ONLY ONTO OOZE OPAL OPEN OPTS ORAL ORBS ORCA ORES OUCH OUST OUTS OVAL OVEN OVER OWED OWES OWLS OWNS OXEN " +
+    "PACE PACK PACT PADS PAGE PAID PAIL PAIN PAIR PALE PALM PANE PANG PANS PANT PARE PARK PART PASS PAST PATH PAVE PAWN PAWS PEAK PEAL PEAR PEAS PEAT PECK PEEK PEEL PEEP PEER PENS PEON PERK PERT PEST PETS PICK PIED PIER PIES PIGS PIKE PILE PILL PINE PINK PINS PINT PIPE PITH PITS PITY PLAN PLAT PLAY PLEA PLOD PLOP PLOT PLOW PLOY PLUG PLUM PLUS POEM POET POKE POLE POLL POMP POND PONY POOL POOR PORE PORK PORT POSE POSH POST POUR PRAM PRAY PREP PREY PRIM PROD PROM PROP PROS PROW PUBS PUCK PUFF PUGS PULL PULP PUMA PUMP PUNK PUNY PUPA PUPS PURE PUSH PUTT PYRE " +
+    "QUAD QUAY QUIP QUIT QUIZ " +
+    "RACE RACK RAFT RAGE RAGS RAID RAIL RAIN RAKE RAMP RAMS RANG RANK RANT RAPS RARE RASH RATE RATS RAVE RAYS RAZE READ REAL REAP REAR REDO REDS REED REEF REEK REEL RELY REND RENT REST RIBS RICE RICH RIDE RIFE RIFT RIGS RILE RIME RIND RING RINK RIOT RIPE RISE RISK RITE ROAD ROAM ROAR ROBE ROBS ROCK RODE ROLE ROLL ROOF ROOM ROOT ROPE ROSE ROSY ROTS ROUT ROVE ROWS RUBS RUDE RUES RUGS RUIN RULE RUMP RUNG RUNS RUNT RUSE RUSH RUST RUTS " +
+    "SACK SAFE SAGA SAGE SAID SAIL SAKE SALE SALT SAME SAND SANE SAPS SASH SASS SAVE SAWS SAYS SCAB SCAM SCAN SCAR SCUD SCUM SEAL SEAM SEAR SEAS SEAT SECT SEED SEEK SEEM SEEN SEEP SEES SELF SELL SEMI SEND SENT SEPT SETS SEWN SHED SHIN SHIP SHOD SHOE SHOO SHOP SHOT SHOW SHUN SHUT SICK SIDE SIFT SIGH SIGN SILK SILL SILO SILT SING SINK SIPS SITE SITS SIZE SKID SKIM SKIN SKIP SKIT SLAB SLAM SLAP SLAT SLAW SLAY SLED SLEW SLID SLIM SLIP SLIT SLOB SLOG SLOP SLOT SLOW SLUG SLUM SLUR SMOG SNAG SNAP SNIP SNOB SNOT SNOW SOAK SOAP SOAR SOBS SOCK SODA SOFA SOFT SOIL SOLD SOLE SOME SONG SOON SOOT SORE SORT SOUL SOUP SOUR SOWN SPAN SPAR SPAS SPAT SPAY SPED SPIN SPIT SPOT SPRY SPUD SPUN SPUR STAB STAG STAR STAY STEM STEP STEW STIR STOP STOW STUB STUD STUN SUCH SUDS SUED SUES SUIT SUMO SUMS SUNK SUNS SURE SURF SWAB SWAM SWAN SWAP SWAT SWAY SWIG SWIM SWUM " +
+    "TABS TACK TACO TACT TAGS TAIL TAKE TALE TALK TALL TAME TANK TAPE TAPS TART TASK TAUT TAXI TEAL TEAM TEAR TEAS TECH TEEN TEES TELL TEMP TEND TENS TENT TERM TEST TEXT THAN THAT THAW THEE THEM THEN THEY THIN THIS THUD THUG THUS TICK TIDE TIDY TIED TIER TIES TILE TILL TILT TIME TINE TINT TINY TIPS TIRE TOAD TOES TOFU TOIL TOLD TOLL TOMB TONE TONS TOOK TOOL TOOT TOPS TORE TORN TOSS TOTE TOUR TOWN TOYS TRAM TRAY TREE TREK TREY TRIM TRIO TRIP TROD TRUE TUBE TUBS TUCK TUFT TUGS TUNA TUNE TURF TURN TUSK TWIG TWIN TWIT " +
+    "UGLY ULNA UNDO UNIT UNTO UPON URGE URNS USED USER USES " +
+    "VAIN VALE VANE VARY VASE VAST VATS VEAL VEIL VEIN VENT VERB VERY VEST VETO VIAL VIBE VICE VIEW VILE VINE VISA VOID VOLE VOTE VOWS " +
+    "WADE WAGE WAGS WAIL WAIT WAKE WALK WALL WAND WANE WANT WARD WARE WARM WARN WARP WARS WART WARY WASH WASP WAVE WAVY WAXY WAYS WEAK WEAN WEAR WEED WEEK WEEP WEPT WERE WEST WETS WHAT WHEN WHIM WHIP WHIT WHIZ WHOA WICK WIDE WIFE WILD WILL WILT WIMP WIND WINE WING WINK WINS WIPE WIRE WISE WISH WITH WOES WOKE WOLF WOMB WOOD WOOF WOOL WORD WORE WORK WORM WORN WRAP WREN WRIT " +
+    "YAMS YARD YARN YAWN YEAH YEAR YELL YEWS YOGA YOKE YOLK YOUR YOWL " +
+    "ZAGS ZANY ZAPS ZEAL ZERO ZEST ZINC ZONE ZOOM"
+  ).split(/\s+/);
+  var WORDLIST_EXTRA = (
+    "WELL EATS SANK SUNG RANG RUNG SANG SING SONG STUN SPUN SPAN AXED OXES YOLK YARN LORN WORN TORN BORN SHOD TROD PLOD CLOD SCOD " +
+    "TOWS SOWS ROWS BOWS COWS MOWS VOWS NOWS HOWS WOWS JOWS " +
+    "CARS BARS EARS TARS WARS JARS OARS MARS PARS FIRS STIR TSAR " +
+    "GALS PALS FALS(no) " +
+    "MAPS TAPS CAPS NAPS SAPS LAPS RAPS GAPS ZAPS " +
+    "BEDS FEDS REDS WEDS " +
+    "DENS HENS TENS PENS FENS LENS " +
+    "BITS FITS HITS KITS PITS SITS WITS " +
+    "BUNS FUNS GUNS NUNS PUNS RUNS SUNS DUNS " +
+    "COTS DOTS HOTS JOTS LOTS POTS ROTS SOTS TOTS " +
+    "CUBS DUBS HUBS PUBS RUBS SUBS TUBS " +
+    "BOWS ROWS " +
+    "GELS " +
+    "HAMS JAMS RAMS YAMS DAMS " +
+    "PANS BANS CANS FANS MANS TANS VANS " +
+    "DENT GENT LENT RENT SENT TENT VENT WENT BENT CENT DENT " +
+    "COOL FOOL POOL TOOL WOOL " +
+    "BOOK COOK HOOK LOOK NOOK ROOK TOOK " +
+    "BOOM DOOM LOOM ROOM ZOOM " +
+    "BOOT FOOT HOOT LOOT ROOT SOOT TOOT " +
+    "BOSS LOSS MOSS TOSS " +
+    "FUSS MUSS " +
+    "BUSY BULK HULK SULK " +
+    "CHAP CLAP FLAP SLAP SNAP TRAP WRAP " +
+    "BLOT CLOT PLOT SLOT SHOT SPOT TROT " +
+    "BRAG DRAG FLAG SHAG SNAG STAG SWAG " +
+    "BLAM CLAM CRAM DRAM GRAM SLAM SWAM " +
+    "BRAN CLAN PLAN SCAN SPAN SWAN " +
+    "GRIN SKIN SPIN TWIN " +
+    "BRIM GRIM PRIM SLIM SWIM TRIM WHIM " +
+    "CHIN SHIN THIN " +
+    "BRAT CHAT FLAT SPAT THAT " +
+    "BLED FLED PLED SLED SPED " +
+    "STEM THEM " +
+    "STEP PREP " +
+    "GLOB SLOB SNOB " +
+    "STOW CROW GROW BLOW SLOW SHOW FLOW GLOW PLOW SNOW " +
+    "SILT LILT TILT WILT " +
+    "MILK SILK " +
+    "BALK CALK TALK WALK " +
+    "BALL CALL FALL GALL HALL MALL TALL WALL " +
+    "BELL CELL DELL FELL SELL TELL WELL YELL " +
+    "BILL DILL FILL GILL HILL KILL MILL PILL SILL WILL " +
+    "DOLL POLL ROLL TOLL " +
+    "BULL DULL FULL GULL HULL LULL MULL " +
+    "ADDS DADS INNS GIGS MAMA TUTU PURR FUZZ MITT APPS MOMS EBBS ZOOS " +
+    "ALLY JOLLY(no) " +
+    "EGGS AGOG GAGS GIGS " +
+    "SASS FUSS MUSS BOSS LOSS MOSS TOSS MISS KISS HISS PASS MASS BASS " +
+    "BUTT PUTT MATT(no) "
+  ).split(/\s+/).filter(function(w){ return /^[A-Z]{4}$/.test(w); });
+  WORDLIST_EXTRA.forEach(function(w){ WORDLIST.push(w); });
+  var WORDSET = new Set(WORDLIST);
+
+  /* ---------------- Letter data ---------------- */
+  var LETTER_VALUES = {
+    A:1,E:1,I:1,O:1,U:1,L:1,N:1,S:1,T:1,R:1,
+    D:2,G:2,
+    B:3,C:3,M:3,P:3,
+    F:4,H:4,V:4,W:4,Y:4,
+    K:5,
+    J:8,X:8,
+    Q:10,Z:10
+  };
+  var VOWEL_POOL = [
+    ["E",12],["A",9],["I",9],["O",8],["U",4]
+  ];
+  var CONSONANT_POOL = [
+    ["T",9],["N",6],["R",6],["S",6],["L",4],["D",4],["G",3],["C",3],
+    ["M",3],["P",3],["H",2],["B",2],["F",2],["Y",2],["W",2],["K",1],
+    ["V",1]
+  ];
+
+  function weightedPickUnique(pool, excludeSet){
+    var avail = pool.filter(function(p){ return !excludeSet.has(p[0]); });
+    var total = avail.reduce(function(s,p){return s+p[1];},0);
+    var r = Math.random()*total;
+    for (var i=0;i<avail.length;i++){
+      r -= avail[i][1];
+      if (r<=0) return avail[i][0];
+    }
+    return avail[avail.length-1][0];
+  }
+
+  function generateLetterSet(){
+    var vowelCount = Math.random() < 0.5 ? 2 : 3;
+    var chosen = new Set();
+    var letters = [];
+    for (var i=0;i<vowelCount;i++){
+      var v = weightedPickUnique(VOWEL_POOL, chosen);
+      chosen.add(v);
+      letters.push(v);
+    }
+    for (var j=0;j<6-vowelCount;j++){
+      var c = weightedPickUnique(CONSONANT_POOL, chosen);
+      chosen.add(c);
+      letters.push(c);
+    }
+    // shuffle
+    for (var k=letters.length-1;k>0;k--){
+      var idx = Math.floor(Math.random()*(k+1));
+      var tmp = letters[k]; letters[k]=letters[idx]; letters[idx]=tmp;
+    }
+    return letters.map(function(letter, i){
+      return { id: "t"+i, letter: letter, value: LETTER_VALUES[letter] };
+    });
+  }
+
+  /* ---------------- State ---------------- */
+  var state = {
+    roundSeconds: 120,
+    timeLeft: 120,
+    timerHandle: null,
+    score: 0,
+    highScore: 0,
+    tiles: [],
+    stage: [], // array of tile ids in chosen order
+    foundThisSet: [], // {word, pts}
+    totalWordsFound: 0,
+    setsCompleted: 0,
+    bestWord: null // {word, pts}
+  };
+
+  /* ---------------- DOM refs ---------------- */
+  var startScreen = document.getElementById("startScreen");
+  var gameScreen = document.getElementById("gameScreen");
+  var endScreen = document.getElementById("endScreen");
+
+  var timerChoices = document.getElementById("timerChoices");
+  var customSecs = document.getElementById("customSecs");
+  var startBtn = document.getElementById("startBtn");
+  var bestLine = document.getElementById("bestLine");
+
+  var timeNum = document.getElementById("timeNum");
+  var scoreNum = document.getElementById("scoreNum");
+  var progressFill = document.getElementById("progressFill");
+  var tileRow = document.getElementById("tileRow");
+  var stageRow = document.getElementById("stageRow");
+  var clearBtn = document.getElementById("clearBtn");
+  var submitBtn = document.getElementById("submitBtn");
+  var feedback = document.getElementById("feedback");
+  var foundGrid = document.getElementById("foundGrid");
+  var foundCount = document.getElementById("foundCount");
+
+  var finalScore = document.getElementById("finalScore");
+  var newHighBadge = document.getElementById("newHighBadge");
+  var endBestLine = document.getElementById("endBestLine");
+  var endWords = document.getElementById("endWords");
+  var endSets = document.getElementById("endSets");
+  var endBest = document.getElementById("endBest");
+  var playAgainBtn = document.getElementById("playAgainBtn");
+
+  /* ---------------- Persistent storage (high score + preferences) ---------------- */
+  var STORAGE_KEY = "spellpress-progress";
+
+  function applyTimerPref(secs){
+    state.roundSeconds = secs;
+    var matched = false;
+    Array.prototype.forEach.call(timerChoices.children, function(c){
+      var isMatch = parseInt(c.getAttribute("data-secs"), 10) === secs;
+      c.classList.toggle("active", isMatch);
+      if (isMatch) matched = true;
+    });
+    customSecs.value = matched ? "" : secs;
+  }
+
+  function renderBestScore(){
+    bestLine.textContent = state.highScore > 0 ? ("best: " + state.highScore) : "";
+  }
+
+  function loadProgress(){
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if (raw){
+        var data = JSON.parse(raw);
+        if (typeof data.highScore === "number") state.highScore = data.highScore;
+        if (typeof data.roundSeconds === "number") applyTimerPref(data.roundSeconds);
+      }
+    } catch (e) { /* ignore malformed data or blocked storage */ }
+    renderBestScore();
+  }
+
+  function saveProgress(){
+    try {
+      var payload = JSON.stringify({ highScore: state.highScore, roundSeconds: state.roundSeconds });
+      localStorage.setItem(STORAGE_KEY, payload);
+    } catch (e) { /* best-effort, e.g. storage blocked */ }
+  }
+
+  /* ---------------- Start screen wiring ---------------- */
+  Array.prototype.forEach.call(timerChoices.children, function(chip){
+    chip.addEventListener("click", function(){
+      Array.prototype.forEach.call(timerChoices.children, function(c){ c.classList.remove("active"); });
+      chip.classList.add("active");
+      customSecs.value = "";
+      state.roundSeconds = parseInt(chip.getAttribute("data-secs"), 10);
+      saveProgress();
+    });
+  });
+  customSecs.addEventListener("input", function(){
+    var v = parseInt(customSecs.value, 10);
+    if (v > 0){
+      Array.prototype.forEach.call(timerChoices.children, function(c){ c.classList.remove("active"); });
+      state.roundSeconds = v;
+      saveProgress();
+    }
+  });
+
+  startBtn.addEventListener("click", startGame);
+  playAgainBtn.addEventListener("click", function(){
+    endScreen.classList.add("hidden");
+    startScreen.classList.remove("hidden");
+  });
+
+  /* ---------------- Game flow ---------------- */
+  function startGame(){
+    state.timeLeft = state.roundSeconds;
+    state.score = 0;
+    state.totalWordsFound = 0;
+    state.setsCompleted = 0;
+    state.bestWord = null;
+    state.foundThisSet = [];
+    state.tiles = generateLetterSet();
+    state.stage = [];
+
+    startScreen.classList.add("hidden");
+    endScreen.classList.add("hidden");
+    gameScreen.classList.remove("hidden");
+
+    renderTiles();
+    renderStage();
+    renderFound();
+    updateScore();
+    updateTimeDisplay();
+    setFeedback("", "");
+
+    clearInterval(state.timerHandle);
+    state.timerHandle = setInterval(tick, 1000);
+  }
+
+  function tick(){
+    state.timeLeft--;
+    updateTimeDisplay();
+    if (state.timeLeft <= 0){
+      clearInterval(state.timerHandle);
+      endGame();
+    }
+  }
+
+  function updateTimeDisplay(){
+    var m = Math.floor(state.timeLeft/60);
+    var s = state.timeLeft%60;
+    timeNum.textContent = m + ":" + (s<10?"0":"") + s;
+    var pct = Math.max(0, (state.timeLeft/state.roundSeconds)*100);
+    progressFill.style.width = pct + "%";
+    var warn = state.timeLeft <= 10;
+    timeNum.classList.toggle("warn", warn);
+    progressFill.classList.toggle("warn", warn);
+  }
+
+  function updateScore(){
+    scoreNum.textContent = state.score;
+  }
+
+  function endGame(){
+    gameScreen.classList.add("hidden");
+    endScreen.classList.remove("hidden");
+    finalScore.textContent = state.score;
+    endWords.textContent = state.totalWordsFound;
+    endSets.textContent = state.setsCompleted;
+    endBest.textContent = state.bestWord ? (state.bestWord.word + " (" + state.bestWord.pts + ")") : "-";
+
+    var isNewHigh = state.score > state.highScore;
+    if (isNewHigh){
+      state.highScore = state.score;
+      saveProgress();
+    }
+    newHighBadge.classList.toggle("hidden", !isNewHigh);
+    endBestLine.textContent = "best: " + state.highScore;
+    renderBestScore();
+  }
+
+  /* ---------------- Tiles / staging ---------------- */
+  function renderTiles(){
+    tileRow.innerHTML = "";
+    state.tiles.forEach(function(t){
+      var count = state.stage.filter(function(id){ return id===t.id; }).length;
+      var el = document.createElement("div");
+      el.className = "tile" + (count>0 ? " active" : "");
+      el.innerHTML = t.letter + '<span class="val">' + t.value + '</span>' +
+        (count>0 ? '<span class="use-count">' + count + '</span>' : "");
+      el.addEventListener("click", function(){
+        selectTile(t.id);
+      });
+      tileRow.appendChild(el);
+    });
+  }
+
+  function renderStage(){
+    stageRow.innerHTML = "";
+    for (var i=0;i<4;i++){
+      var slot = document.createElement("div");
+      var tileId = state.stage[i];
+      if (tileId){
+        var t = state.tiles.find(function(x){return x.id===tileId;});
+        slot.className = "stage-slot filled";
+        slot.textContent = t.letter;
+        (function(idx){
+          slot.addEventListener("click", function(){ removeFromStage(idx); });
+        })(i);
+      } else {
+        slot.className = "stage-slot";
+        slot.textContent = "";
+      }
+      stageRow.appendChild(slot);
+    }
+    submitBtn.disabled = state.stage.length !== 4;
+  }
+
+  function selectTile(id){
+    if (state.stage.length >= 4) return;
+    var t = state.tiles.find(function(x){return x.id===id;});
+    if (!t) return;
+    state.stage.push(id);
+    renderTiles();
+    renderStage();
+    setFeedback("", "");
+    if (state.stage.length === 4){
+      setTimeout(submitWord, 220);
+    }
+  }
+
+  function removeFromStage(idx){
+    var id = state.stage[idx];
+    if (!id) return;
+    state.stage.splice(idx,1);
+    renderTiles();
+    renderStage();
+  }
+
+  function clearStage(){
+    state.stage = [];
+    renderTiles();
+    renderStage();
+  }
+
+  clearBtn.addEventListener("click", function(){
+    clearStage();
+    setFeedback("", "");
+  });
+
+  submitBtn.addEventListener("click", submitWord);
+
+  /* keyboard support */
+  document.addEventListener("keydown", function(e){
+    if (gameScreen.classList.contains("hidden")) return;
+    var key = e.key.toUpperCase();
+    if (key === "ENTER"){
+      if (!submitBtn.disabled) submitWord();
+      return;
+    }
+    if (key === "BACKSPACE"){
+      if (state.stage.length) removeFromStage(state.stage.length-1);
+      return;
+    }
+    if (/^[A-Z]$/.test(key)){
+      var candidate = state.tiles.find(function(t){ return t.letter === key; });
+      if (candidate) selectTile(candidate.id);
+    }
+  });
+
+  function submitWord(){
+    if (state.stage.length !== 4) return;
+    var tiles = state.stage.map(function(id){ return state.tiles.find(function(x){return x.id===id;}); });
+    var word = tiles.map(function(t){return t.letter;}).join("");
+
+    var alreadyFound = state.foundThisSet.some(function(w){ return w.word === word; });
+
+    if (alreadyFound){
+      setFeedback("Already used “" + word + "” this set", "bad");
+      shakeStage();
+      returnStageToPool();
+      return;
+    }
+    if (!WORDSET.has(word)){
+      setFeedback("“" + word + "” isn’t in the word list", "bad");
+      shakeStage();
+      returnStageToPool();
+      return;
+    }
+
+    var pts = tiles.reduce(function(s,t){ return s + t.value; }, 0);
+    state.score += pts;
+    state.totalWordsFound++;
+    state.foundThisSet.push({ word: word, pts: pts });
+    if (!state.bestWord || pts > state.bestWord.pts) state.bestWord = { word: word, pts: pts };
+
+    updateScore();
+    setFeedback(word + "  +" + pts, "ok");
+    returnStageToPool();
+    renderFound();
+
+    if (state.foundThisSet.length === 4){
+      var bonus = 25;
+      state.score += bonus;
+      updateScore();
+      setFeedback("Set complete! Bonus +" + bonus + " — new letters incoming", "bonus");
+      state.setsCompleted++;
+      setTimeout(function(){
+        state.tiles = generateLetterSet();
+        state.foundThisSet = [];
+        renderTiles();
+        renderFound();
+        setFeedback("", "");
+      }, 900);
+    }
+  }
+
+  function returnStageToPool(){
+    state.stage = [];
+    renderTiles();
+    renderStage();
+  }
+
+  function shakeStage(){
+    stageRow.style.transform = "translateX(-4px)";
+    setTimeout(function(){ stageRow.style.transform = "translateX(4px)"; }, 60);
+    setTimeout(function(){ stageRow.style.transform = "translateX(0)"; }, 120);
+  }
+
+  function renderFound(){
+    foundGrid.innerHTML = "";
+    for (var i=0;i<4;i++){
+      var cell = document.createElement("div");
+      var w = state.foundThisSet[i];
+      if (w){
+        cell.className = "found-cell";
+        cell.innerHTML = '<div class="word">' + w.word + '</div><div class="pts">+' + w.pts + '</div>';
+      } else {
+        cell.className = "found-cell empty";
+        cell.innerHTML = '<div class="word">&mdash;&mdash;&mdash;&mdash;</div>';
+      }
+      foundGrid.appendChild(cell);
+    }
+    foundCount.textContent = state.foundThisSet.length;
+  }
+
+  function setFeedback(msg, kind){
+    feedback.textContent = msg;
+    feedback.className = "feedback" + (kind ? " " + kind : "");
+  }
+
+  /* ---------------- Init ---------------- */
+  loadProgress();
+
+})();
+</script>
+</body>
+</html>

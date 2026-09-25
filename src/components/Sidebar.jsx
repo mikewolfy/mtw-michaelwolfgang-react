@@ -35,6 +35,12 @@ const navSections = [
     ],
   },
   {
+    title: 'Games',
+    items: [
+      { to: '/games/spellpress', label: 'Spell Press' },
+    ],
+  },
+  {
     items: [
       { to: '/booklist', label: 'Book List' },
       { to: '/quotes', label: 'Quotes' },
