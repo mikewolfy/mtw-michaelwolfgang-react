@@ -1,6 +1,34 @@
 const BookList = () => {
   const books = [
     {
+      title: "Carl's Doomsday Scenario",
+      author: 'Matt Dinniman',
+      date: 'September 2026',
+      category: 'Fiction',
+      status: 'In Progress',
+      imageUrl: "https://placehold.co/200x280?text=Carl%27s+Doomsday+Scenario",
+      notes:
+        'Book two of the Dungeon Crawler Carl series, following Carl and Princess Donut deeper into the game-show dungeon built beneath a demolished Earth.',
+    },
+    {
+      title: 'Dungeon Crawler Carl',
+      author: 'Matt Dinniman',
+      date: 'August 2026',
+      category: 'Fiction',
+      imageUrl: 'https://placehold.co/200x280?text=Dungeon+Crawler+Carl',
+      notes:
+        'A darkly funny litRPG survival story where Carl and his cat Princess Donut fight for their lives through a dungeon built beneath the ruins of Earth.',
+    },
+    {
+      title: 'The Thursday Murder Club',
+      author: 'Richard Osman',
+      date: 'June 2026',
+      category: 'Fiction',
+      imageUrl: 'https://placehold.co/200x280?text=Thursday+Murder+Club',
+      notes:
+        'A cozy mystery about four retirees in a British retirement village who reopen a cold case and outwit the professionals investigating a new murder.',
+    },
+    {
       title: 'Hidden Potential',
       author: 'Adam Grant',
       date: 'June 2024',
