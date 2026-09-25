@@ -6,7 +6,7 @@ const BookList = () => {
       date: 'September 2026',
       category: 'Fiction',
       status: 'In Progress',
-      imageUrl: "https://placehold.co/200x280?text=Carl%27s+Doomsday+Scenario",
+      imageUrl: 'https://covers.openlibrary.org/b/id/11702962-L.jpg',
       notes:
         'Book two of the Dungeon Crawler Carl series, following Carl and Princess Donut deeper into the game-show dungeon built beneath a demolished Earth.',
     },
@@ -15,7 +15,7 @@ const BookList = () => {
       author: 'Matt Dinniman',
       date: 'August 2026',
       category: 'Fiction',
-      imageUrl: 'https://placehold.co/200x280?text=Dungeon+Crawler+Carl',
+      imageUrl: 'https://covers.openlibrary.org/b/id/15143022-L.jpg',
       notes:
         'A darkly funny litRPG survival story where Carl and his cat Princess Donut fight for their lives through a dungeon built beneath the ruins of Earth.',
     },
@@ -24,7 +24,7 @@ const BookList = () => {
       author: 'Richard Osman',
       date: 'June 2026',
       category: 'Fiction',
-      imageUrl: 'https://placehold.co/200x280?text=Thursday+Murder+Club',
+      imageUrl: 'https://covers.openlibrary.org/b/id/10201431-L.jpg',
       notes:
         'A cozy mystery about four retirees in a British retirement village who reopen a cold case and outwit the professionals investigating a new murder.',
     },
@@ -356,7 +356,7 @@ const BookList = () => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto">
+    <div className="max-w-6xl mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-slate-800 mb-2">Book List</h1>
         <p className="text-slate-500">
@@ -364,72 +364,80 @@ const BookList = () => {
         </p>
       </div>
 
-      <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
-        <h2 className="text-base font-semibold text-slate-800 mb-2">Book Discovery Lists</h2>
-        <ul className="list-disc list-inside text-sm text-slate-700 space-y-1">
-          {recommendationLists.map((item) => (
-            <li key={item.url}>
-              <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-5">
+          <h2 className="text-base font-semibold text-slate-800 mb-2">Book Discovery Lists</h2>
+          <ul className="list-disc list-inside text-sm text-slate-700 space-y-1">
+            {recommendationLists.map((item) => (
+              <li key={item.url}>
+                <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-      <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
-        <h2 className="text-base font-semibold text-slate-800 mb-2">On My To-Read List</h2>
-        <ul className="list-disc list-inside text-sm text-slate-700 space-y-1">
-          {toRead.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-5">
+          <h2 className="text-base font-semibold text-slate-800 mb-2">On My To-Read List</h2>
+          <ul className="list-disc list-inside text-sm text-slate-700 space-y-1">
+            {toRead.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
       </div>
 
       <div className="flex flex-wrap gap-2 mb-6">
         {categories.map((cat) => (
-          <span key={cat} className={`px-2 py-1 rounded text-xs font-semibold ${categoryColors[cat] ?? 'bg-slate-100 text-slate-600'}`}>
+          <span key={cat} className={`px-2 py-1 rounded-full text-xs font-semibold ${categoryColors[cat] ?? 'bg-slate-100 text-slate-600'}`}>
             {cat}
           </span>
         ))}
       </div>
 
-      <div className="space-y-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {books.map((book) => (
           <div
             key={book.title}
-            className="bg-white rounded-xl border border-slate-200 shadow-sm p-5 hover:shadow-md transition-shadow duration-200 flex gap-4 items-start"
+            className="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-shadow duration-200 overflow-hidden flex flex-col"
           >
             <img
               src={book.imageUrl}
               alt={book.title}
-              className="w-20 h-28 object-cover rounded border border-slate-200 bg-slate-50 shrink-0"
+              className="w-full h-72 object-cover bg-slate-100"
               loading="lazy"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = `https://placehold.co/400x560/e2e8f0/64748b?text=${encodeURIComponent(book.title)}`;
+              }}
             />
-            <div className="flex-1">
+            <div className="p-5 flex flex-col flex-1">
               <div className="flex items-center gap-2 mb-1 flex-wrap">
                 <h2 className="text-base font-semibold text-slate-800">{book.title}</h2>
-                <span className={`px-2 py-0.5 rounded text-xs font-medium ${categoryColors[book.category] ?? 'bg-slate-100 text-slate-600'}`}>
+              </div>
+              <div className="flex items-center gap-2 mb-2 flex-wrap">
+                <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${categoryColors[book.category] ?? 'bg-slate-100 text-slate-600'}`}>
                   {book.category}
                 </span>
                 {book.status && (
-                  <span className="px-2 py-0.5 rounded text-xs font-medium bg-amber-100 text-amber-800">
+                  <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
                     {book.status}
                   </span>
                 )}
               </div>
-              <p className="text-sm text-slate-500 mb-1">
+              <p className="text-sm text-slate-500 mb-2">
                 {book.author}
                 {book.format ? ` (${book.format})` : ''}
                 {book.date ? ` • ${book.date}` : ''}
               </p>
-              <p className="text-sm text-slate-600">{book.notes}</p>
+              <p className="text-sm text-slate-600 flex-1">{book.notes}</p>
               {book.summaryUrl && (
                 <a
                   href={book.summaryUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block mt-2 text-sm text-blue-600 hover:text-blue-800 hover:underline"
+                  className="inline-block mt-3 text-sm text-blue-600 hover:text-blue-800 hover:underline"
                 >
                   Book Summary
                 </a>

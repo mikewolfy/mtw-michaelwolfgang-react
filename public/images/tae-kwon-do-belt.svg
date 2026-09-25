@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#eff6ff"/>
+  <circle cx="200" cy="205" r="150" fill="#dbeafe"/>
+  <circle cx="200" cy="205" r="108" fill="#bfdbfe" opacity="0.6"/>
+
+  <!-- wrapped belt band -->
+  <path d="M110,155 C110,120 150,105 200,105 C250,105 290,120 290,155" fill="none" stroke="#1e293b" stroke-width="34" stroke-linecap="round"/>
+
+  <!-- knot -->
+  <rect x="176" y="150" width="48" height="48" rx="10" fill="#0f172a" transform="rotate(45 200 174)"/>
+  <rect x="180" y="154" width="40" height="40" rx="8" fill="none" stroke="#475569" stroke-width="2.5" transform="rotate(45 200 174)"/>
+
+  <!-- hanging tails -->
+  <g fill="#1e293b">
+    <rect x="163" y="188" width="26" height="110" rx="10" transform="rotate(-12 176 188)"/>
+    <rect x="211" y="188" width="26" height="110" rx="10" transform="rotate(12 224 188)"/>
+  </g>
+  <!-- rank stripes -->
+  <g fill="#dc2626">
+    <rect x="158" y="258" width="30" height="8" rx="2" transform="rotate(-12 173 262)"/>
+    <rect x="212" y="258" width="30" height="8" rx="2" transform="rotate(12 227 262)"/>
+  </g>
+</svg>

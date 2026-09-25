@@ -129,7 +129,7 @@ const getTotalTimers = (targetDate, now) => {
 };
 
 const TimerCard = ({ title, items }) => (
-  <div className="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
+  <div className="bg-white rounded-2xl shadow-sm p-6 border border-slate-200">
     <h2 className="text-2xl font-bold mb-4 text-slate-800">{title}</h2>
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-base md:text-xl">
       {items.map((item) => (
@@ -246,7 +246,7 @@ const LifeTimers = () => {
 
   return (
     <div className="space-y-8">
-      <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200">
+      <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200">
         <h1 className="text-4xl font-bold mb-6 text-slate-800">
           Life Timers
         </h1>
@@ -309,7 +309,7 @@ const LifeTimers = () => {
           ]}
         />
       ) : (
-        <div className="bg-white rounded-xl shadow-sm p-6 border border-slate-200 text-slate-600">
+        <div className="bg-white rounded-2xl shadow-sm p-6 border border-slate-200 text-slate-600">
           Enter a valid DOB and retirement age to see retirement timers.
         </div>
       )}
@@ -327,7 +327,7 @@ const LifeTimers = () => {
           ]}
         />
       ) : (
-        <div className="bg-white rounded-xl shadow-sm p-6 border border-slate-200 text-slate-600">
+        <div className="bg-white rounded-2xl shadow-sm p-6 border border-slate-200 text-slate-600">
           Enter a valid DOB to see end-of-life timers.
         </div>
       )}

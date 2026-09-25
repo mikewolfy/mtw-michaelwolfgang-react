@@ -97,7 +97,7 @@ const JwtDecoder = () => {
         </p>
       </div>
 
-      <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200">
+      <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200">
         <div className="mb-6">
           <label htmlFor="jwt-input" className="block text-lg font-semibold text-slate-700 mb-2">
             Paste your JWT token here:
@@ -189,7 +189,7 @@ const JwtDecoder = () => {
       </div>
 
       {/* Information Section */}
-      <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200">
+      <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200">
         <h2 className="text-2xl font-bold text-slate-800 mb-4">About JWT Tokens</h2>
         <div className="space-y-3 text-slate-600">
           <p>

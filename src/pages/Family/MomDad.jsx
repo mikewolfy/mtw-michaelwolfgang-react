@@ -3,7 +3,7 @@ const MomDad = () => {
     <div className="space-y-6">
       <h1 className="text-4xl font-bold text-slate-800 mb-6">Tim and Mary Ann - Still in Love</h1>
       
-      <div className="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
+      <div className="bg-white rounded-2xl shadow-sm p-6 border border-slate-200">
         <div className="flex flex-col items-center">
           <img 
             src="/images/mom-dad-wedding-resized.JPG" 

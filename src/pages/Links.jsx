@@ -7,7 +7,7 @@ const Links = () => {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200 hover:shadow-md transition-shadow duration-200">
+        <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200 hover:shadow-lg transition-shadow duration-200">
           <h2 className="text-2xl font-bold text-slate-800 border-l-4 border-blue-600 pl-3 mb-6">Professional</h2>
           <ul className="space-y-2">
             <li>
@@ -43,7 +43,7 @@ const Links = () => {
           </ul>
         </div>
 
-        <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200 hover:shadow-md transition-shadow duration-200">
+        <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200 hover:shadow-lg transition-shadow duration-200">
           <h2 className="text-2xl font-bold text-slate-800 border-l-4 border-blue-600 pl-3 mb-6">Personal Projects</h2>
           <ul className="space-y-2">
             <li>

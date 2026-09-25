@@ -249,9 +249,9 @@ const MyersBriggs = () => {
           <p className="text-slate-500 text-lg">Welcome back!</p>
         </div>
 
-        <div className="bg-white rounded-xl shadow-sm p-10 border border-slate-200">
+        <div className="bg-white rounded-2xl shadow-sm p-10 border border-slate-200">
           <div className="text-center mb-8">
-            <div className="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl text-xl font-bold mb-4">
+            <div className="inline-block bg-blue-600 text-white px-6 py-3 rounded-2xl text-xl font-bold mb-4">
               Previous Result Found
             </div>
             <h2 className="text-2xl font-bold text-slate-800 mb-2">
@@ -265,7 +265,7 @@ const MyersBriggs = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <button
               onClick={loadPreviousResults}
-              className="group bg-slate-50 hover:bg-slate-100 p-8 rounded-xl border-2 border-slate-200 hover:border-blue-400 transition-all duration-200"
+              className="group bg-slate-50 hover:bg-slate-100 p-8 rounded-2xl border-2 border-slate-200 hover:border-blue-400 transition-all duration-200"
             >
               <div className="text-4xl mb-4">📊</div>
               <h3 className="text-xl font-bold text-slate-800 mb-2">View Previous Results</h3>
@@ -274,7 +274,7 @@ const MyersBriggs = () => {
 
             <button
               onClick={startNewTest}
-              className="group bg-slate-50 hover:bg-slate-100 p-8 rounded-xl border-2 border-slate-200 hover:border-blue-400 transition-all duration-200"
+              className="group bg-slate-50 hover:bg-slate-100 p-8 rounded-2xl border-2 border-slate-200 hover:border-blue-400 transition-all duration-200"
             >
               <div className="text-4xl mb-4">🔄</div>
               <h3 className="text-xl font-bold text-slate-800 mb-2">Take Test Again</h3>
@@ -301,9 +301,9 @@ const MyersBriggs = () => {
           </h1>
         </div>
 
-        <div className="bg-white rounded-xl shadow-sm p-10 border border-slate-200">
+        <div className="bg-white rounded-2xl shadow-sm p-10 border border-slate-200">
           <div className="text-center mb-8">
-            <div className="inline-block bg-blue-600 text-white px-8 py-4 rounded-xl text-4xl font-bold mb-4">
+            <div className="inline-block bg-blue-600 text-white px-8 py-4 rounded-2xl text-4xl font-bold mb-4">
               {personalityType}
             </div>
             <h2 className="text-3xl font-bold text-slate-800 mb-2">{typeInfo.name}</h2>
@@ -311,24 +311,24 @@ const MyersBriggs = () => {
           </div>
 
           <div className="mb-8 space-y-6">
-            <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+            <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
               <h3 className="text-lg font-bold text-slate-800 mb-3">How You Operate</h3>
               <p className="text-slate-700">{typeInfo.howTheyOperate}</p>
             </div>
 
-            <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+            <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
               <h3 className="text-lg font-bold text-slate-800 mb-3">Your Strengths</h3>
               <p className="text-slate-700">{typeInfo.strengths}</p>
             </div>
 
-            <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+            <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
               <h3 className="text-lg font-bold text-slate-800 mb-3">Ideal Career Paths</h3>
               <p className="text-slate-700">{typeInfo.idealCareers}</p>
             </div>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
-            <div className="bg-slate-50 p-6 rounded-xl text-center border border-slate-200">
+            <div className="bg-slate-50 p-6 rounded-2xl text-center border border-slate-200">
               <div className="text-3xl font-bold text-blue-600 mb-2">
                 {answers.E >= answers.I ? 'E' : 'I'}
               </div>
@@ -340,7 +340,7 @@ const MyersBriggs = () => {
               </div>
             </div>
 
-            <div className="bg-slate-50 p-6 rounded-xl text-center border border-slate-200">
+            <div className="bg-slate-50 p-6 rounded-2xl text-center border border-slate-200">
               <div className="text-3xl font-bold text-blue-600 mb-2">
                 {answers.S >= answers.N ? 'S' : 'N'}
               </div>
@@ -352,7 +352,7 @@ const MyersBriggs = () => {
               </div>
             </div>
 
-            <div className="bg-slate-50 p-6 rounded-xl text-center border border-slate-200">
+            <div className="bg-slate-50 p-6 rounded-2xl text-center border border-slate-200">
               <div className="text-3xl font-bold text-blue-600 mb-2">
                 {answers.T >= answers.F ? 'T' : 'F'}
               </div>
@@ -364,7 +364,7 @@ const MyersBriggs = () => {
               </div>
             </div>
 
-            <div className="bg-slate-50 p-6 rounded-xl text-center border border-slate-200">
+            <div className="bg-slate-50 p-6 rounded-2xl text-center border border-slate-200">
               <div className="text-3xl font-bold text-blue-600 mb-2">
                 {answers.J >= answers.P ? 'J' : 'P'}
               </div>
@@ -380,14 +380,14 @@ const MyersBriggs = () => {
           <div className="text-center">
             <button
               onClick={resetTest}
-              className="bg-blue-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-700 transition-colors duration-200"
+              className="bg-blue-600 text-white px-8 py-3 rounded-2xl font-bold hover:bg-blue-700 transition-colors duration-200"
             >
               Take Test Again
             </button>
           </div>
         </div>
 
-        <div className="bg-slate-50 rounded-xl p-8 border border-slate-200">
+        <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
           <h3 className="text-2xl font-bold text-slate-800 mb-4">About the Myers-Briggs Type Indicator</h3>
           <p className="text-slate-700 mb-4">
             The Myers-Briggs Type Indicator (MBTI) is a personality assessment that categorizes individuals into 16 distinct 
@@ -401,14 +401,14 @@ const MyersBriggs = () => {
           </ul>
         </div>
 
-        <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200">
+        <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200">
           <h3 className="text-2xl font-bold text-slate-800 mb-6 text-center">
               All 16 Personality Types - Complete Guide
           </h3>
 
           <div className="space-y-6">
             {Object.entries(personalityTypes).map(([type, info]) => (
-              <div key={type} className="bg-white rounded-xl p-6 border border-slate-200 hover:border-blue-400 transition-colors duration-200">
+              <div key={type} className="bg-white rounded-2xl p-6 border border-slate-200 hover:border-blue-400 transition-colors duration-200">
                 <div className="mb-4">
                   <h4 className="text-2xl font-bold text-slate-800 mb-2 flex items-center gap-3">
                     <span className="bg-blue-600 text-white px-4 py-1 rounded-lg text-xl">
@@ -453,7 +453,7 @@ const MyersBriggs = () => {
       </div>
 
       {/* Progress Bar */}
-      <div className="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
+      <div className="bg-white rounded-2xl shadow-sm p-6 border border-slate-200">
         <div className="flex justify-between items-center mb-3">
           <span className="text-sm font-semibold text-slate-700">
             Question {currentQuestion + 1} of {questions.length}
@@ -471,7 +471,7 @@ const MyersBriggs = () => {
       </div>
 
       {/* Question Card */}
-      <div className="bg-white rounded-xl shadow-sm p-10 border border-slate-200">
+      <div className="bg-white rounded-2xl shadow-sm p-10 border border-slate-200">
         <h2 className="text-3xl font-bold text-slate-800 mb-8 text-center">
           {currentQ.question}
         </h2>
@@ -479,7 +479,7 @@ const MyersBriggs = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <button
             onClick={() => handleAnswer(currentQ.typeA)}
-            className="group bg-slate-50 hover:bg-blue-50 p-8 rounded-xl border-2 border-slate-200 hover:border-blue-400 transition-all duration-200"
+            className="group bg-slate-50 hover:bg-blue-50 p-8 rounded-2xl border-2 border-slate-200 hover:border-blue-400 transition-all duration-200"
           >
             <div className="text-4xl font-bold text-blue-600 mb-3 group-hover:scale-110 transition-transform">A</div>
             <p className="text-lg text-slate-700 font-medium">{currentQ.optionA}</p>
@@ -487,7 +487,7 @@ const MyersBriggs = () => {
 
           <button
             onClick={() => handleAnswer(currentQ.typeB)}
-            className="group bg-slate-50 hover:bg-slate-100 p-8 rounded-xl border-2 border-slate-200 hover:border-slate-400 transition-all duration-200"
+            className="group bg-slate-50 hover:bg-slate-100 p-8 rounded-2xl border-2 border-slate-200 hover:border-slate-400 transition-all duration-200"
           >
             <div className="text-4xl font-bold text-slate-600 mb-3 group-hover:scale-110 transition-transform">B</div>
             <p className="text-lg text-slate-700 font-medium">{currentQ.optionB}</p>

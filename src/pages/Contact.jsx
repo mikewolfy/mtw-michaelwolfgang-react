@@ -6,7 +6,7 @@ const Contact = () => {
         <p className="text-slate-500 text-lg">Let's connect and collaborate</p>
       </div>
       
-      <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200 max-w-2xl mx-auto">
+      <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200 max-w-2xl mx-auto">
         <div className="space-y-4">
           <div>
             <h3 className="text-2xl font-bold text-slate-800 border-l-4 border-blue-600 pl-3 mb-4">Connect with me</h3>
@@ -16,7 +16,7 @@ const Contact = () => {
           </div>
 
           <div className="space-y-6">
-              <div className="p-4 bg-slate-50 rounded-xl border-l-4 border-blue-500">
+              <div className="p-4 bg-slate-50 rounded-2xl border-l-4 border-blue-500">
               <h4 className="font-bold text-slate-800 mb-1">LinkedIn</h4>
               <a 
                 href="https://www.linkedin.com/in/michael-wolfgang/" 

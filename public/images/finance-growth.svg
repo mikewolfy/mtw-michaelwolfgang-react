@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#eff6ff"/>
+  <circle cx="200" cy="205" r="150" fill="#dbeafe"/>
+  <circle cx="200" cy="205" r="108" fill="#bfdbfe" opacity="0.6"/>
+
+  <!-- baseline -->
+  <line x1="90" y1="300" x2="310" y2="300" stroke="#94a3b8" stroke-width="3"/>
+
+  <!-- bars -->
+  <rect x="110" y="250" width="38" height="50" rx="8" fill="#93c5fd"/>
+  <rect x="163" y="215" width="38" height="85" rx="8" fill="#60a5fa"/>
+  <rect x="216" y="175" width="38" height="125" rx="8" fill="#3b82f6"/>
+  <rect x="269" y="130" width="38" height="170" rx="8" fill="#1d4ed8"/>
+
+  <!-- trend line -->
+  <polyline points="112,235 182,195 235,155 288,115" fill="none" stroke="#16a34a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="288,100 310,112 292,128" fill="#16a34a"/>
+
+  <!-- coin accent -->
+  <circle cx="120" cy="140" r="26" fill="#fbbf24" stroke="#f59e0b" stroke-width="3"/>
+  <text x="120" y="149" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">$</text>
+</svg>

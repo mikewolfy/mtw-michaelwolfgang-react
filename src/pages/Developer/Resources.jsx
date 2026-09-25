@@ -6,7 +6,7 @@ const Resources = () => {
         <p className="text-slate-500 text-lg">Essential learning resources for Azure, .NET, and software engineering</p>
       </div>
 
-      <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200 hover:shadow-md transition-shadow duration-200">
+      <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200 hover:shadow-lg transition-shadow duration-200">
         <h2 className="text-2xl font-bold text-slate-800 border-l-4 border-blue-600 pl-3 mb-6">Azure Resources</h2>
         <ul className="space-y-3 text-slate-700">
           <li>
@@ -42,7 +42,7 @@ const Resources = () => {
         </ul>
       </div>
 
-      <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200 hover:shadow-md transition-shadow duration-200">
+      <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200 hover:shadow-lg transition-shadow duration-200">
         <h2 className="text-2xl font-bold text-slate-800 border-l-4 border-blue-600 pl-3 mb-6">.NET Resources</h2>
         <ul className="space-y-2 text-slate-700">
           <li>
@@ -78,7 +78,7 @@ const Resources = () => {
         </ul>
       </div>
 
-      <div className="bg-white rounded-xl shadow-sm p-8 border border-slate-200 hover:shadow-md transition-shadow duration-200">
+      <div className="bg-white rounded-2xl shadow-sm p-8 border border-slate-200 hover:shadow-lg transition-shadow duration-200">
         <h2 className="text-2xl font-bold text-slate-800 border-l-4 border-blue-600 pl-3 mb-6">Software Engineering</h2>
         <ul className="space-y-2 text-slate-700">
           <li>
