@@ -58,10 +58,10 @@ const CollapsibleSection = ({ title, items, onNavigate }) => {
     <div className="mb-1">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between w-full px-4 py-2 text-xs font-semibold uppercase tracking-widest text-slate-400 hover:text-slate-200 transition-colors duration-150"
+        className="flex items-center justify-between w-full px-4 py-2 text-xs font-semibold uppercase tracking-widest text-slate-500 hover:text-slate-800 transition-colors duration-150"
       >
         <span>{title}</span>
-        <span className="text-slate-500 text-xs">{isOpen ? '▾' : '▸'}</span>
+        <span className="text-slate-400 text-xs">{isOpen ? '▾' : '▸'}</span>
       </button>
       {isOpen && (
         <ul>
@@ -74,8 +74,8 @@ const CollapsibleSection = ({ title, items, onNavigate }) => {
                 className={({ isActive }) =>
                   `block px-6 py-2 text-sm transition-colors duration-150 rounded-lg mx-2 ${
                     isActive
-                      ? 'bg-blue-600 text-white font-medium'
-                      : 'text-slate-400 hover:bg-slate-800 hover:text-slate-100'
+                      ? 'bg-blue-600 text-white font-semibold'
+                      : 'text-slate-600 hover:bg-blue-50 hover:text-blue-700'
                   }`
                 }
               >
@@ -104,24 +104,24 @@ const Sidebar = ({ isOpen, onClose }) => {
       {/* Sidebar panel */}
       <aside
         className={`
-          fixed inset-y-0 left-0 z-30 w-64 bg-slate-900 flex flex-col
+          fixed inset-y-0 left-0 z-30 w-64 bg-white border-r border-slate-200 flex flex-col
           transform transition-transform duration-300 ease-in-out
           ${isOpen ? 'translate-x-0' : '-translate-x-full'}
-          lg:relative lg:translate-x-0 lg:flex-shrink-0
+          lg:sticky lg:top-14 lg:z-0 lg:h-[calc(100vh-3.5rem)] lg:self-start lg:translate-x-0 lg:flex-shrink-0
         `}
       >
         {/* Sidebar header */}
-        <div className="flex items-center justify-between px-4 py-5 border-b border-slate-800 flex-shrink-0">
+        <div className="lg:hidden flex items-center justify-between px-4 h-14 border-b border-slate-200 flex-shrink-0">
           <NavLink
             to="/"
             onClick={onClose}
-            className="text-slate-100 font-semibold text-sm leading-tight hover:text-blue-400 transition-colors"
+            className="text-slate-800 font-extrabold text-lg leading-tight hover:text-blue-600 transition-colors"
           >
             Michael Wolfgang
           </NavLink>
           <button
             onClick={onClose}
-            className="text-slate-400 hover:text-white lg:hidden transition-colors"
+            className="text-slate-500 hover:text-slate-800 lg:hidden transition-colors"
             aria-label="Close sidebar"
           >
             ✕
@@ -149,8 +149,8 @@ const Sidebar = ({ isOpen, onClose }) => {
                       className={({ isActive }) =>
                         `block px-4 py-2 text-sm transition-colors duration-150 rounded-lg mx-2 ${
                           isActive
-                            ? 'bg-blue-600 text-white font-medium'
-                            : 'text-slate-400 hover:bg-slate-800 hover:text-slate-100'
+                            ? 'bg-blue-600 text-white font-semibold'
+                            : 'text-slate-600 hover:bg-blue-50 hover:text-blue-700'
                         }`
                       }
                     >
