@@ -74,7 +74,7 @@ const LoveLanguages = () => {
       name: "Words of Affirmation",
       description: "You feel most loved through verbal compliments, words of appreciation, and frequent expressions of affection. Encouragement and kind words mean the world to you.",
       icon: "💬",
-      color: "from-blue-500 to-indigo-500"
+      color: "from-sky-500 to-cyan-500"
     },
     qualityTime: {
       name: "Quality Time",
