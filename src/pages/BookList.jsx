@@ -1,11 +1,31 @@
 const BookList = () => {
   const books = [
     {
+      title: 'The Man Who Died Twice',
+      author: 'Richard Osman',
+      date: 'October 2026',
+      category: 'Fiction',
+      status: 'In Progress',
+      imageUrl: 'https://covers.openlibrary.org/b/id/12002504-L.jpg',
+      notes:
+        'Book two of the Thursday Murder Club series, as the retirees are pulled into a new case when a dangerous figure from Elizabeth’s past turns up.',
+    },
+    {
+      title: "The Dungeon Anarchist's Cookbook",
+      author: 'Matt Dinniman',
+      date: 'October 2026',
+      category: 'Fiction',
+      status: 'In Progress',
+      imageUrl: 'https://covers.openlibrary.org/b/id/15233609-L.jpg',
+      notes:
+        "Book three of the Dungeon Crawler Carl series, continuing Carl and Princess Donut's fight to survive the dungeon.",
+    },
+    {
       title: "Carl's Doomsday Scenario",
       author: 'Matt Dinniman',
       date: 'September 2026',
       category: 'Fiction',
-      status: 'In Progress',
+      rating: 9,
       imageUrl: 'https://covers.openlibrary.org/b/id/11702962-L.jpg',
       notes:
         'Book two of the Dungeon Crawler Carl series, following Carl and Princess Donut deeper into the game-show dungeon built beneath a demolished Earth.',
@@ -423,6 +443,11 @@ const BookList = () => {
                 {book.status && (
                   <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
                     {book.status}
+                  </span>
+                )}
+                {book.rating != null && (
+                  <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-700">
+                    &#9733; {book.rating}/10
                   </span>
                 )}
               </div>
