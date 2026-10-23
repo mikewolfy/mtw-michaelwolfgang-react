@@ -1,11 +1,31 @@
 const BookList = () => {
   const books = [
     {
+      title: 'The Man Who Died Twice',
+      author: 'Richard Osman',
+      date: 'October 2026',
+      category: 'Fiction',
+      status: 'In Progress',
+      imageUrl: 'https://covers.openlibrary.org/b/id/12002504-L.jpg',
+      notes:
+        'Book two of the Thursday Murder Club series, as the retirees are pulled into a new case when a dangerous figure from Elizabeth’s past turns up.',
+    },
+    {
+      title: "The Dungeon Anarchist's Cookbook",
+      author: 'Matt Dinniman',
+      date: 'October 2026',
+      category: 'Fiction',
+      status: 'In Progress',
+      imageUrl: 'https://covers.openlibrary.org/b/id/15233609-L.jpg',
+      notes:
+        "Book three of the Dungeon Crawler Carl series, continuing Carl and Princess Donut's fight to survive the dungeon.",
+    },
+    {
       title: "Carl's Doomsday Scenario",
       author: 'Matt Dinniman',
       date: 'September 2026',
       category: 'Fiction',
-      status: 'In Progress',
+      rating: 9,
       imageUrl: 'https://covers.openlibrary.org/b/id/11702962-L.jpg',
       notes:
         'Book two of the Dungeon Crawler Carl series, following Carl and Princess Donut deeper into the game-show dungeon built beneath a demolished Earth.',
@@ -333,14 +353,6 @@ const BookList = () => {
     },
   ];
 
-  const toRead = [
-    'The First 90 Days',
-    'The Art of Strategic Execution: Finding Success in Technical Program Leadership',
-    'Travis Lowdermilk - The Customer-Driven Playbook and The Customer-Driven Culture',
-    'How to Know a Person by David Brooks',
-    'Reclaiming Conversation by Sherry Turkle',
-  ];
-
   const categories = [...new Set(books.map((b) => b.category))];
 
   const categoryColors = {
@@ -364,28 +376,17 @@ const BookList = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-5">
-          <h2 className="text-base font-semibold text-slate-800 mb-2">Book Discovery Lists</h2>
-          <ul className="list-disc list-inside text-sm text-slate-700 space-y-1">
-            {recommendationLists.map((item) => (
-              <li key={item.url}>
-                <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-5">
-          <h2 className="text-base font-semibold text-slate-800 mb-2">On My To-Read List</h2>
-          <ul className="list-disc list-inside text-sm text-slate-700 space-y-1">
-            {toRead.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
+      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 mb-6">
+        <h2 className="text-base font-semibold text-slate-800 mb-2">Book Discovery Lists</h2>
+        <ul className="list-disc list-inside text-sm text-slate-700 space-y-1">
+          {recommendationLists.map((item) => (
+            <li key={item.url}>
+              <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
 
       <div className="flex flex-wrap gap-2 mb-6">
@@ -423,6 +424,11 @@ const BookList = () => {
                 {book.status && (
                   <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
                     {book.status}
+                  </span>
+                )}
+                {book.rating != null && (
+                  <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-700">
+                    &#9733; {book.rating}/10
                   </span>
                 )}
               </div>
