@@ -353,14 +353,6 @@ const BookList = () => {
     },
   ];
 
-  const toRead = [
-    'The First 90 Days',
-    'The Art of Strategic Execution: Finding Success in Technical Program Leadership',
-    'Travis Lowdermilk - The Customer-Driven Playbook and The Customer-Driven Culture',
-    'How to Know a Person by David Brooks',
-    'Reclaiming Conversation by Sherry Turkle',
-  ];
-
   const categories = [...new Set(books.map((b) => b.category))];
 
   const categoryColors = {
@@ -384,28 +376,17 @@ const BookList = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-5">
-          <h2 className="text-base font-semibold text-slate-800 mb-2">Book Discovery Lists</h2>
-          <ul className="list-disc list-inside text-sm text-slate-700 space-y-1">
-            {recommendationLists.map((item) => (
-              <li key={item.url}>
-                <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-5">
-          <h2 className="text-base font-semibold text-slate-800 mb-2">On My To-Read List</h2>
-          <ul className="list-disc list-inside text-sm text-slate-700 space-y-1">
-            {toRead.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
+      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 mb-6">
+        <h2 className="text-base font-semibold text-slate-800 mb-2">Book Discovery Lists</h2>
+        <ul className="list-disc list-inside text-sm text-slate-700 space-y-1">
+          {recommendationLists.map((item) => (
+            <li key={item.url}>
+              <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
 
       <div className="flex flex-wrap gap-2 mb-6">
