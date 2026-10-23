@@ -21,6 +21,7 @@ import CiamResources from './pages/TechDocs/CiamResources';
 import BookList from './pages/BookList';
 import Quotes from './pages/Quotes';
 import SpellPress from './pages/SpellPress';
+import PaceCalculator from './pages/PaceCalculator';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
           <Route path="booklist" element={<BookList />} />
           <Route path="quotes" element={<Quotes />} />
           <Route path="games/spellpress" element={<SpellPress />} />
+          <Route path="pace-calculator" element={<PaceCalculator />} />
 
           {/* Developer Routes */}
           <Route path="developer" element={<Developer />} />

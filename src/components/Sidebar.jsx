@@ -32,6 +32,7 @@ const navSections = [
       { to: '/myers-briggs', label: 'Myers-Briggs Personality' },
       { to: '/love-languages', label: 'Love Languages' },
       { to: '/life-timers', label: 'Life Timers' },
+      { to: '/pace-calculator', label: 'Pace Calculator' },
     ],
   },
   {
